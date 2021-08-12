@@ -116,9 +116,7 @@ img {
 .heycisco-proj {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  min-height: 100vh;
+  min-height: 100%;
   color: var(--color-text);
   background: var(--color-bg);
   font-family: OpenSans-Regular, sans-serif;
@@ -129,22 +127,19 @@ img {
 .heycisco-proj .main-footer,
 .heycisco-proj .main-block {
   padding: var(--section-padding) var(--grid-sides);
+  width: 100%;
   max-width: var(--page-width);
-  overflow-x: hidden;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
 }
 
 .heycisco-proj .main-block.wrapper {
   padding: var(--section-padding) 0;
   max-width: var(--content-width);
   flex: 1 1 auto;
-  flex-direction: column;
-  justify-content: flex-start;
+  align-content: flex-start;
 }
 
 .heycisco-proj .main-block.wrapper main {

@@ -3,10 +3,10 @@
 	"version": "1.0.0",
 	"description": "blank project",
 	"main": "index.html",
-	"homepage": "https://github.com/heycisco/",
+	"homepage": "https://github.com/heycisco",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/heycisco/"
+		"url": "https://github.com/heycisco/blank-tpl"
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"

@@ -83,10 +83,10 @@ img {
   --color-bg: #eee;
   --c: 1;
   --page-width: unset;
-  --content-width: 960px;
-  --content-indents: calc(48px * var(--c));
+  --content-width: unset;
+  --content-indents: 0;
   --grid-columns: 12;
-  --grid-sides: calc(32px * var(--c));
+  --grid-sides: calc(18px * var(--c));
   --grid-gutter: calc(16px * var(--c));
   --section-padding: var(--grid-gutter);
 }
@@ -116,9 +116,7 @@ img {
 .heycisco-proj {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  min-height: 100vh;
+  min-height: 100%;
   color: var(--color-text);
   background: var(--color-bg);
   font-family: OpenSans-Regular, sans-serif;
@@ -129,22 +127,19 @@ img {
 .heycisco-proj .main-footer,
 .heycisco-proj .main-block {
   padding: var(--section-padding) var(--grid-sides);
+  width: 100%;
   max-width: var(--page-width);
-  overflow-x: hidden;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
 }
 
 .heycisco-proj .main-block.wrapper {
   padding: var(--section-padding) 0;
   max-width: var(--content-width);
   flex: 1 1 auto;
-  flex-direction: column;
-  justify-content: flex-start;
+  align-content: flex-start;
 }
 
 .heycisco-proj .main-block.wrapper main {
@@ -154,4 +149,8 @@ img {
 
 .heycisco-proj .main-header {
   justify-content: space-between;
+}
+
+.heycisco-proj .main-block .homepage__content .suit {
+  display: flex;
 }

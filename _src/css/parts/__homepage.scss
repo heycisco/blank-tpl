@@ -1,3 +1,10 @@
-&__homepage {
-	&__content {}
+.homepage {
+	&__content {
+		.suit {
+			display: flex;
+			svg {
+
+			}
+		}
+	}
 }

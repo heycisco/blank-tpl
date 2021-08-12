@@ -9,13 +9,13 @@
 	// Ограничение ширины страницы
 	--page-width: unset;
 	// Ограничение ширины контента
-	--content-width: 960px;
+	--content-width: unset;
 	// Отступ контента
-	--content-indents: calc(48px * var(--c));
+	--content-indents: 0;
 	// Количество колонок
 	--grid-columns: 12;
 	// Отступы от края экрана
-	--grid-sides: calc(32px * var(--c));
+	--grid-sides: calc(18px * var(--c));
 	// Отступы между колонками и по бокам секций
 	--grid-gutter: calc(16px * var(--c));
 	// Отступы сверху/снизу секций

@@ -1,0 +1,21 @@
+// Обнуление стилей:
+@import "defs/__nullstyle.scss";
+
+// Глобальные переменные
+@import "defs/__vars.scss";
+
+// Глобальные стили
+@import "defs/__defs.scss";
+
+.heycisco-proj { // <= Оборачиваем стили в класс body
+	@import "components/__header.scss";
+	@import "components/__footer.scss";
+	@import "components/__menu.scss";
+	@import "__styles.scss";
+
+	.main-block {
+		@import "parts/__homepage.scss";
+		@import "parts/__category.scss";
+		@import "parts/__article.scss";
+	}
+}

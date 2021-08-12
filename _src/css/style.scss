@@ -1,21 +1,28 @@
-// Обнуление стилей:
-@import "defs/__nullstyle.scss";
+// // Обнуление стилей:
+// @import "defs/__nullstyle.scss";
 
-// Глобальные переменные
-@import "defs/__vars.scss";
+// // Глобальные переменные
+// @import "defs/__vars.scss";
 
-// Глобальные стили
-@import "defs/__defs.scss";
+// // Глобальные стили
+// @import "defs/__defs.scss";
 
-.heycisco-proj { // <= Оборачиваем стили в класс body
-	@import "components/__header.scss";
-	@import "components/__footer.scss";
-	@import "components/__menu.scss";
-	@import "__styles.scss";
+// .heycisco-proj { // <= Оборачиваем стили в класс body
+// 	@import "components/__header.scss";
+// 	@import "components/__footer.scss";
+// 	@import "components/__menu.scss";
+// 	@import "__styles.scss";
 
-	.main-block {
-		@import "parts/__homepage.scss";
-		@import "parts/__category.scss";
-		@import "parts/__article.scss";
-	}
-}
+// 	.main-block {
+// 		@import "parts/__homepage.scss";
+// 		@import "parts/__category.scss";
+// 		@import "parts/__article.scss";
+// 	}
+// }
+
+// Naked-science styles.scss
+// @import "naked/reset.css";
+// @import "naked/community.css";
+// @import "naked/custom.css";
+// @import "naked/comments_selection.css";
+@import "naked/__my-styles.scss";

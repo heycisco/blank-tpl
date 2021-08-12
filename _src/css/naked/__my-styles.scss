@@ -1,0 +1,50 @@
+.codex-editor {
+	margin: 10px;
+	border: 1px solid #000000;
+	&__redactor {
+		margin: 50px 0 0 100px;
+		border: 1px solid red;
+		border:  1px #ccc solid;
+		position: relative;
+	}
+	.ce-block {
+		border: 1px solid red;
+		padding: 4px;
+		margin: 4px;
+	}
+}
+
+.ce {
+	&-toolbar {
+		margin: 10px 0 0 50px;
+		border:  1px #ccc solid;
+		&__content {
+			display: flex;
+			&>* {
+				border: 1px solid red;
+				padding: 4px;
+				margin: 4px;
+			}
+		}
+
+		&__actions {
+			order: 3;
+			margin-left: auto;
+		}
+
+		&__plus {
+			
+		}
+	}
+
+	&-toolbox {
+
+	}
+}
+.ajust-position-wrapper {
+	border: 1px solid blue;
+	padding: 4px;
+	margin: 4px;
+	position: absolute;
+	display: flex;
+}

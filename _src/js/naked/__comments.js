@@ -1,25 +1,4 @@
-// jqs = jQuery.noConflict();
-jQuery(function() {
-	// ; // тут переменные
-	// 
-// Отключение действий при нажатии на кнопки
-function preventDefault() {
-	$('button').on('click', function(event) {
-		event.preventDefault();
-	});
-}
-; // все функции
-	// ; // скрипты для меню
-
-
-
-// действия:
-	// preventDefault(); // отключаем кнопки
-
-
-	$(window).on('load', function() {
-// действия после загрузки:
-	const codexEditor = $('.codex-editor');
+const codexEditor = $('.codex-editor');
 const codexEditorRedactor = $('.codex-editor .codex-editor__redactor');
 const codexBlock = $('.codex-editor .ce-block');
 const codexBlockFocused = $('.codex-editor .ce-block--focused');
@@ -65,9 +44,4 @@ $(window).on('resize', function() {
 	} else {
 		moveToDefault();
 	}
-});
-;
-
-
-	});
 });

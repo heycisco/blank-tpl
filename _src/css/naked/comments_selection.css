@@ -1,0 +1,103 @@
+.shesht-comment-template__content-text > span {
+    font-style: normal !important;
+}
+
+.shesht-comment-template__content-text blockquote,
+.shesht-comments-block-form-contenteditable blockquote {
+  background-color: rgba(0, 0, 0, .03); /* #f7f7f7; */
+  padding: 6px 40px 6px 10px;
+  position: relative;
+  border-radius: 3px;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.sidebar-comment-block .shesht-comment-template__content-text > span {
+    color: #1A1A1A;
+    white-space: inherit;
+}
+
+.shesht-comments-block-form-area__text__hidden {
+  position: absolute;
+  height: 0;
+  padding: 0;
+  visibility: hidden;
+}
+
+/*@media screen and (min-width: 720px) {*/
+  .shesht-comment-template__content-text blockquote::after,
+  .shesht-comments-block-form-contenteditable blockquote::after {
+    content: "”";
+    color: #999;
+    font-size: 45px;
+    display: block;
+    position: absolute;
+    right: 8px;
+    top: 16px;
+    font-weight: 700;
+  }
+/*}*/
+
+.comments_selection-snippet,
+.comments_selection-snippet__reverse {
+  background: #000;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 100;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  color: #fff;
+  transition: opacity .15s ease-out 0s;
+}
+
+.comments_selection-snippet:hover > .comments_selection-snippet-icon,
+.comments_selection-snippet__reverse:hover > .comments_selection-snippet-icon {
+  opacity: .8;
+}
+
+.comments_selection-snippet:before,
+.comments_selection-snippet__reverse:before {
+  content: '';
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  position: absolute;
+  left: 42%;
+}
+
+.comments_selection-snippet:before {
+  border-top: 5px solid #000;
+  bottom: -5px;
+}
+
+.comments_selection-snippet__reverse:before {
+  border-bottom: 5px solid #000;
+  top: -5px;
+}
+
+.shesht-comments-block-form-contenteditable {
+  line-height: 23px;
+  font-family: "Arial AMU Regular", sans-serif;
+  white-space: pre-wrap;
+  color: #1A1A1A;
+  font-size: 14px;
+
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  box-sizing: border-box;
+  background-color: #FCFCFC;
+  padding: 22px 46px 13px 18px;
+  margin-bottom: 5px;
+  min-height: 88px;
+}
+
+[contenteditable][placeholder]:empty:before {
+  content: attr(placeholder);
+  position: absolute;
+  color: #BABABA;
+  background-color: transparent;
+}

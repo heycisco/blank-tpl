@@ -87,8 +87,8 @@ img {
   --content-indents: 0;
   --grid-columns: 12;
   --grid-sides: calc(18px * var(--c));
-  --grid-gutter: calc(16px * var(--c));
-  --section-padding: var(--grid-gutter);
+  --grid-gutter: calc(12px * var(--c));
+  --section-padding: calc(18px * var(--c));
 }
 
 @media (max-width: 1024px) {
@@ -153,4 +153,40 @@ img {
 
 .heycisco-proj .main-block .homepage__content .suit {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  position: relative;
+  min-height: calc(100vh - (var(--section-padding) * 2));
+  border: 1px solid;
+}
+
+.heycisco-proj .main-block .homepage__content .suit #position_set {
+  width: 6px;
+  height: 6px;
+  background: red;
+}
+
+.heycisco-proj .main-block .homepage__content .suit__item {
+  margin-right: var(--grid-gutter);
+  margin-bottom: var(--grid-gutter);
+  flex: 1 1 calc(50% - (var(--grid-gutter)) / 2);
+  height: calc(50vh - (var(--section-padding) * 1.6));
+  border: 1px solid;
+  position: absolute;
+  display: none;
+}
+
+.heycisco-proj .main-block .homepage__content .suit__item:nth-child(1) {
+  margin-right: 0;
+  transform-origin: 100% 100%;
+  right: 0;
+  bottom: 0;
+}
+
+.heycisco-proj .main-block .homepage__content .suit__item svg {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
 }

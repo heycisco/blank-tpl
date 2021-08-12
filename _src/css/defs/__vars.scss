@@ -17,9 +17,9 @@
 	// Отступы от края экрана
 	--grid-sides: calc(18px * var(--c));
 	// Отступы между колонками и по бокам секций
-	--grid-gutter: calc(16px * var(--c));
+	--grid-gutter: calc(12px * var(--c));
 	// Отступы сверху/снизу секций
-	--section-padding: var(--grid-gutter);
+	--section-padding: calc(18px * var(--c));
 
 // Адаптивность
 	@media (max-width: 1024px) {

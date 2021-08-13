@@ -1,35 +1,33 @@
-const codexEditor = $('.codex-editor');
-const codexEditorRedactor = $('.codex-editor .codex-editor__redactor');
-const codexBlock = $('.codex-editor .ce-block');
-const codexToolbar = $('.codex-editor .ce-toolbar__content');
-const codexToolbarMoved = $('.codex-editor .ce-toolbar__plus').add('.codex-editor .ce-toolbox');
+jQuery(window).on('load', function(){
 
+console.log('script-start');
 
-// $(codexBlock).on('click', function() {
-// 	$(codexBlock).removeClass('ce-block--focused');
-// 	$(this).addClass('ce-block--focused');
-// });
+const codexEditor = jQuery('.codex-editor');
+const codexEditorRedactor = jQuery('.codex-editor .codex-editor__redactor');
+const codexBlock = jQuery('.codex-editor .ce-block');
+const codexToolbar = jQuery('.codex-editor .ce-toolbar__content');
+const codexToolbarMoved = jQuery('.codex-editor .ce-toolbar__plus').add('.codex-editor .ce-toolbox');
 
 
 
 function moveToInput() {
-	$(codexEditorRedactor).prepend('<div class="ajust-position-wrapper"></div>');
-	$(codexToolbarMoved).appendTo('.ajust-position-wrapper');
-	let movedElements = $('.ajust-position-wrapper');
-	$(movedElements).css({
+	jQuery(codexEditorRedactor).prepend('<div class="ajust-position-wrapper"></div>');
+	jQuery(codexToolbarMoved).appendTo('.ajust-position-wrapper');
+	let movedElements = jQuery('.ajust-position-wrapper');
+	jQuery(movedElements).css({
 		'left': '-50px'
 	});
-	$(codexEditor).addClass('position-was-fixed');
+	jQuery(codexEditor).addClass('position-was-fixed');
 	console.log('moveToInput');
 }
 
 function positionControl() {
-	let movedElements = $('.ajust-position-wrapper');
-	let codexBlockFocused = $('.codex-editor .ce-block--focused');
+	let movedElements = jQuery('.ajust-position-wrapper');
+	let codexBlockFocused = jQuery('.codex-editor .ce-block--focused');
 	let position = codexBlockFocused.position();
 	let posTop = position.top;
 	let posLeft = position.left -= 50;
-	$(movedElements).css({
+	jQuery(movedElements).css({
 		'top': posTop + 'px',
 		'left': posLeft + 'px'
 	});
@@ -37,19 +35,27 @@ function positionControl() {
 }
 
 function moveToDefault() {
-	$(codexToolbarMoved).appendTo(codexToolbar);
-	$('.ajust-position-wrapper').remove();
-	$(codexEditor).removeClass('position-was-fixed');
+	jQuery(codexToolbarMoved).appendTo(codexToolbar);
+	jQuery('.ajust-position-wrapper').remove();
+	jQuery(codexEditor).removeClass('position-was-fixed');
 	console.log('moveToDefault');
 }
 
-if ($(window).width() < 650) {
+
+// jQuery(codexBlock).on('click', function() {
+// 	jQuery(codexBlock).removeClass('ce-block--focused');
+// 	jQuery(this).addClass('ce-block--focused');
+// 	console.log('click event');
+// });
+
+if (jQuery(window).width() < 650) {
 	moveToInput();
-	$(codexBlock).on('click', function() {
+	jQuery(codexBlock).on('click', function() {
 		positionControl();
 	});
+	console.log('first init');
 }
-$(window).on('resize', function() {
+jQuery(window).on('resize', function() {
 	if ($(window).width() < 650) {
 		moveToDefault();
 		moveToInput();
@@ -57,4 +63,6 @@ $(window).on('resize', function() {
 	} else {
 		moveToDefault();
 	}
+});
+console.log('resize init');
 });

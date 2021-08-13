@@ -1,47 +1,91 @@
-// Подключение локальных шрифтов
-@font-face {
-	font-family: 'OpenSans-Regular';
-	src: url('../fonts/OpenSans-Regular.eot');
-	src: url('../fonts/OpenSans-Regular.eot?iefix') format('eot'),
-		url('../fonts/OpenSans-Regular.woff') format('woff'),
-		url('../fonts/OpenSans-Regular.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+// Шрифты
+@mixin font-light {
+	font-family: $font;
+	font-weight: 300;
+}
+
+@mixin font-regular {
+	font-family: $font;
+	font-weight: 400;
+}
+
+
+@mixin font-bold {
+	font-family: $font;
+	font-weight: 600;
+}
+
+
+@mixin font-extra {
+	font-family: 'Ruda', sans-serif;
+	font-weight: 400;
+	letter-spacing: 0.03em;
 }
 
 
 
 // Глобальные стили
 .heycisco-proj { // <= Класс у body
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
-	color: var(--color-text);
-	background: var(--color-bg);
-	font-family: $font;
+	max-width: var(--page-width);
+	padding: 0 var(--grid-sides);
+	min-height: 100vh;
+	color: $text;
+	background: $bg;
+	background: $bg-gradient;
+	font-size: 16px;
 	line-height: 1.5;
+	position: relative;
+	@include font-regular;
+	-webkit-font-smoothing: antialiased;
 
 	.main-header,
-	.main-footer,
-	.main-block {
-		padding: var(--section-padding) var(--grid-sides);
-		width: 100%;
-		max-width: var(--page-width);
-		margin: 0 auto;
+	.main-block,
+	.main-aside {
+		padding: var(--section-padding) var(--section-padding);
+		// overflow-x: hidden;
 		display: flex;
 		justify-content: center;
 		align-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: calc((100% - var(--main-block-width)) / 2);
+		position: fixed;
 	}
 
-	.main-block.wrapper { // <= Блок с контентом между хедером и футером
-		padding: var(--section-padding) 0;
-		max-width: var(--content-width);
-		flex: 1 1 auto;
-		align-content: flex-start;
+	.main-header {
+		justify-content: space-between;
+		align-items: flex-start;
+		left: 0;
+		top: 0;
+		height: 100%;
+	}
 
-		main { // <= Общий для всех видов контента блок
+	.main-block {
+		width: var(--main-block-width);
+		justify-content: center;
+		margin: 0 auto;
+		padding: calc(var(--section-padding)/2) 0;
+		position: static;
+
+		section {
 			width: 100%;
-			padding: var(--content-indents) var(--grid-sides);
+			height: 100%;
 		}
+
 	}
+
+	.main-aside {
+		justify-content: space-between;
+		align-items: flex-end;
+		right: 0;
+		top: 0;
+		height: 100%;
+	}
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+	color: inherit;
 }

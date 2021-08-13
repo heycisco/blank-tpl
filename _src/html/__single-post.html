@@ -1,9 +1,11 @@
-<main class="main-block__single single">
-	<section class="single__article">
+<main class="main-block single-post" id="top">
+	<section class="main-post-section">
+		<article class="simple">
 		@@include('article/__article-header.html')
-
-		@@include('article/__article-content.html')
-
+			<div class="wrapper">
+				@@include('article/__article-content.html')
+			</div>
 		@@include('article/__article-footer.html')
+		</article>
 	</section>
 </main>

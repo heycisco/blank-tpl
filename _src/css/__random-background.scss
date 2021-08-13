@@ -1,0 +1,64 @@
+.article-prev {
+
+	// BACKGROUND-------
+
+	&.bg-1 {
+		background-image: url(../img/random-bg/body1.svg);
+
+		&:before {
+			background-image: url(../img/random-bg/before1.svg);
+		}
+
+		&:after {
+			background-image: url(../img/random-bg/after1.svg);
+		}
+	}
+
+	&.bg-2 {
+		background-image: url(../img/random-bg/body2.svg);
+
+		&:before {
+			background-image: url(../img/random-bg/before2.svg);
+		}
+
+		&:after {
+			background-image: url(../img/random-bg/after2.svg);
+		}
+	}
+
+	// STAPLES----------
+
+	.staple-1 {
+		&:after {
+			left: 20px;
+			top: -14px;
+			transform: rotate(-13deg);
+		}
+	}
+
+	.staple-2 {
+		&:after {
+			right: 77px;
+			left: unset;
+			top: -10px;
+			transform: rotate(13deg);
+		}
+	}
+
+	.staple-3 {
+		&:after {
+			right: 152px;
+			left: unset;
+			top: -13px;
+			transform: rotate(-10deg);
+		}
+	}
+
+	.staple-4 {
+		&:after {
+			left: 12px;
+			top: 6px;
+			transform: rotate(-42deg);
+		}
+	}
+}

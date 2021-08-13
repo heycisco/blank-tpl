@@ -1,4 +1,4 @@
-let project_folder = "dist";
+let project_folder = "dist/heycisco-theme";
 let source_folder = "_src";
 
 let path = {

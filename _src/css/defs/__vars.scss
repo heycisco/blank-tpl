@@ -1,8 +1,4 @@
 :root {
-// Цвета
-	--color-text: #333;
-	--color-bg: #eee;
-
 // Макет
 	// Глобальный корректор значений
 	--c: 1;
@@ -15,11 +11,15 @@
 	// Количество колонок
 	--grid-columns: 12;
 	// Отступы от края экрана
-	--grid-sides: calc(32px * var(--c));
+	--grid-sides: 0;
 	// Отступы между колонками и по бокам секций
 	--grid-gutter: calc(16px * var(--c));
 	// Отступы сверху/снизу секций
-	--section-padding: var(--grid-gutter);
+	--section-padding: calc(48px * var(--c));
+
+	--el-indents: calc(12px * var(--c));
+	--main-block-width: 680px;
+	--staple-size: 1;
 
 // Адаптивность
 	@media (max-width: 1024px) {
@@ -32,6 +32,18 @@
 	}
 }
 
-// SCSS переменные
 
+
+// SCSS переменные
+$bg: rgb(221, 221, 221);
+$bg-gradient: radial-gradient(circle, rgba(221, 221, 221, 1) 25%, rgba(204, 204, 204, 1) 100%);
+$text: #4d4d4d;
+$gray-1: #999999;
+$light: #b3b3b3;
+$white: #ffffff;
+$orange: #f15a24;
+$header-bg: #4f4f4f;
+$white-transparent: #ffffff70;
 $font: OpenSans-Regular, sans-serif;
+$tansition-out: 0.4s ease-in;
+$tansition-in: 0.15s ease-in;

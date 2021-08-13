@@ -1,0 +1,275 @@
+.main-header {
+	@include font-extra;
+	text-transform: uppercase;
+	color: $text;
+
+	>* {
+		width: 100%;
+		position: relative;
+	}
+
+	.branding h1,
+	.copyright {
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			left: calc(var(--section-padding)* -1);
+			background: $gray-1;
+			height: 4px;
+			width: calc(var(--section-padding) - var(--el-indents));
+		}
+	}
+
+	.branding {
+		h1 {
+			font-size: 2.15rem;
+			line-height: 1.2;
+
+			&:before {
+				top: calc((2.45rem / 2) - 2px);
+				pointer-events: none;
+			}
+		}
+
+		a:hover {
+			h1 {
+				&:before {
+					background: $orange;
+					transition: background $tansition-in;
+				}
+			}
+		}
+
+		a {
+			h1 {
+				&:before {
+					transition: background $tansition-out;
+				}
+			}
+		}
+	}
+
+	.copyright {
+		max-width: 340px;
+		&:before {
+			top: calc(50% - 2px);
+		}
+
+		span {
+			display: block;
+			font-size: 0.75rem;
+
+			&:first-child {
+				font-weight: 600;
+			}
+		}
+	}
+
+
+
+	.main-nav {
+		font-size: 1.8rem;
+		line-height: 1;
+
+		ul {
+			li {
+				position: relative;
+
+				a {
+					padding: 18px 0;
+					color: inherit;
+					position: relative;
+					display: inline-block;
+
+					&:after {
+						content: "";
+						position: absolute;
+						width: 0;
+						left: 50%;
+						height: 4px;
+						display: block;
+						bottom: 8px;
+						background: $gray-1;
+						opacity: 0;
+						transition: all $tansition-out;
+					}
+
+					&:hover {
+						&:after {
+							opacity: 1;
+							width: 100%;
+							left: 0;
+							transition: all $tansition-in;
+						}
+
+					}
+				}
+
+				&.menu-item-has-children {
+					ul {
+						position: relative;
+						top: -9px;
+						display: none;
+
+						li {
+							font-size: 0.6em;
+
+							a {
+								padding: 0.5em 0;
+								transition: all $tansition-out;
+
+								&:after {
+									display: none;
+								}
+
+								&:hover {
+									padding-left: 0.65em;
+									transition: all $tansition-in;
+								}
+							}
+						}
+					}
+
+					&.clicked {
+						a:hover:after {
+							opacity: 0;
+							transition: all $tansition-out;
+						}
+
+						ul {
+						}
+					}
+
+					>a {
+						span {
+							position: absolute;
+							top: 18px;
+							right: -1em;
+							transform: rotate(0);
+							transform-origin: .4em .4em;
+							color: $gray-1;
+							transition: all $tansition-out;
+							svg {
+								width: 0.8em;
+								height: 0.8em;
+							}
+						}
+					}
+
+					&.clicked a,
+					a:hover {
+						span {
+							transform: rotate(-90deg);
+							color: $orange;
+							transition: all $tansition-in;
+						}
+					}
+					&.clicked a {
+						span {
+							transform: rotate(-90deg);
+							color: $orange;
+							transition: all $tansition-in;
+							transition-delay: 0.1s;
+						}
+					}
+
+					&.clicked a:hover span {
+						transform: rotate(90deg);
+					}
+
+				}
+			}
+		}
+	}
+}
+
+.main-aside {
+	.social {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		justify-content: center;
+		align-items: center;
+
+		a {
+			border-radius: 50%;
+			margin: 0.7em 0;
+			padding: 0.7em 0.35em;
+			position: relative;
+			left: 0.35em;
+			color: $text;
+
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				right: calc(var(--section-padding)* -1);
+				top: calc(50% - 2px);
+				background: #999;
+				height: 4px;
+				width: calc(var(--section-padding) - var(--el-indents));
+				transition: all $tansition-out;
+				pointer-events: none;
+			}
+
+			svg {
+				width: 1.6rem;
+				height: 1.6rem;
+				transform: scale(1);
+				transition: all $tansition-out;
+			}
+
+			&:hover {
+				svg {
+					transform: scale(1.2);
+					transition: all $tansition-in;
+				}
+
+				&:before {
+					transition: all $tansition-in;
+				}
+			}
+
+			&#link_vk:hover {
+				svg {
+					color: #4a719e;
+				}
+
+				&:before {
+					background: #4a719e;
+				}
+			}
+
+			&#link_fb:hover {
+				svg {
+					color: #3a5794;
+				}
+
+				&:before {
+					background: #3a5794;
+				}
+			}
+
+			&#link_insta:hover {
+				svg {
+					color: #d6249f;
+				}
+
+				&:before {
+					background: #d6249f;
+				}
+			}
+
+			&#link_yandex:hover {
+				svg {
+					color: #f70000;
+				}
+
+				&:before {
+					background: #f70000;
+				}
+			}
+		}
+	}
+}

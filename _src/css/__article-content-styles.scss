@@ -1,0 +1,102 @@
+.post-content {
+	mark {
+		background: #36637061;
+		padding: 0 0.15em;
+	}
+
+	a {
+		color: $header-bg;
+		border-bottom: 1px dotted #36637061;
+		transition: border $tansition-out;
+
+		&:hover {
+			border-bottom: 1px solid $orange;
+			transition: border $tansition-in;
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		@include font-bold;
+		margin-top: 1em;
+		margin-bottom: 0.5em;
+	}
+
+	h1 {
+		font-size: 1.8em;
+	}
+
+	h2 {
+		font-size: 1.55em;
+	}
+
+	h3 {
+		font-size: 1.15em;
+	}
+
+	h4 {
+		font-size: 1em;
+	}
+
+	h5 {
+		font-size: 1em;
+		@include font-regular;
+	}
+
+	h6 {
+		font-size: 1em;
+		@include font-light;
+	}
+
+	p {
+		font-size: 1em;
+		@include font-regular;
+		margin-bottom: 0.75em;
+	}
+
+	b {
+		@include font-bold;
+	}
+
+	::marker {
+		color: $header-bg;
+		@include font-bold;
+	}
+
+	ul li {
+		list-style: square;
+		margin-left: 1.25em;
+	}
+
+	ol li {
+		margin-left: 0.2em;
+	}
+
+	ol {
+		margin-left: 1em;
+	}
+
+	blockquote {
+		font-style: italic;
+		color: $header-bg;
+		font-weight: bold;
+		font-size: 1.15em;
+		padding: 0.5em 1.75em;
+		text-align: center;
+	}
+
+	img {
+		margin: 0.5em 0;
+	}
+
+	>*:first-child {
+		margin-top: 0;
+	}
+
+	>*:last-child {
+		margin-bottom: 0;
+	}
+}

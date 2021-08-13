@@ -1,0 +1,179 @@
+.article-prev {
+	margin: 52px 0;
+	position: relative;
+	background-repeat: repeat-y;
+	background-size: auto;
+	background-position: center;
+	box-shadow: 0 -30px 50px #00000000;
+	transform: matrix3d(1,0,0.00,0,0.00,1,0.00,0,0,0,1,0,0,0,0,1);
+	transition: all $tansition-out;
+	transform-origin: center bottom 0px;
+	&:hover {
+		box-shadow: 0 -30px 50px #00000040;
+		transform: matrix3d(1.0,0,0.00,0,0.00,1.0,0.00,0.0001,0,0,1,0,0,0,0,1);
+		transition: all $tansition-in;
+	}
+
+	&:before,
+	&:after {
+		content: "";
+		width: 100%;
+		left: 0;
+		position: absolute;
+		display: block;
+		background-repeat: no-repeat;
+		background-size: auto;
+	}
+
+	&:before {
+		height: 24px;
+		top: -23px;
+		background-position: center bottom;
+	}
+
+	&:after {
+		height: 24px;
+		bottom: -23px;
+		background-position: center top;
+	}
+
+	.post-link {
+		position: absolute;
+		width: 100%;
+		height: calc(100% + 16px);
+		left: 0;
+		top: -8px;
+		display: block;
+		z-index: 1;
+	}
+
+	.wrapper {
+		display: flex;
+		padding: 6px 24px;
+
+
+	}
+
+	.picture {
+		flex: 0 0 200px;
+		height: 200px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: relative;
+		background: #fff;
+		padding: 6px;
+		margin-right: 4px;
+		left: -30px;
+		top: -22px;
+		z-index: 2;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			left: 40px;
+			top: -14px;
+			transform: rotate(-3deg);
+			z-index: 2;
+			display: block;
+			width: calc(24px * var(--staple-size));
+			height: calc(80px * var(--staple-size));
+			background-image: url(../img/staple/02.svg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+		}
+	}
+
+	.content {
+		flex: 1 1 auto;
+		margin-bottom: 6px;
+
+		.title {
+			@include font-bold;
+			font-size: 1.6rem;
+			margin-bottom: 0.5em;
+			position: relative;
+
+			&:after {
+				content: "";
+				width: 33%;
+				height: 2px;
+				background: $orange;
+				display: block;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+		}
+
+		.short-text {
+			@include font-regular;
+			font-size: 1.05rem;
+		}
+
+		.meta {
+			@include font-bold;
+			text-transform: uppercase;
+			font-size: 0.7rem;
+			margin-top: 24px;
+			position: relative;
+
+			&:before {
+				content: "";
+				width: 66%;
+				height: 2px;
+				background: $orange;
+				display: block;
+				position: absolute;
+				right: 0;
+				top: -10px;
+
+			}
+
+			.tags {
+				display: flex;
+				justify-content: flex-end;
+				align-items: flex-end;
+				color: $gray-1;
+
+				.tag-label {
+					margin-right: 0.3em;
+					color: $orange;
+				}
+
+				.tag-items {
+					a {
+						color: inherit;
+						padding: 0 2px;
+						line-height: 1;
+						transition: color $tansition-out;
+
+						&:hover {
+							color: $text;
+							transition: color $tansition-in;
+
+						}
+					}
+
+				}
+			}
+		}
+		.staple-content {
+			width: calc(36px * var(--staple-size));
+			height: auto;
+			position: absolute;
+		}
+
+		a {
+			position: relative;
+			z-index: 2;
+		}
+	}
+}

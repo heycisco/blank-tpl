@@ -5,13 +5,15 @@ jQuery(function() {
 	@@include('components/__menu.js'); // скрипты для меню
 
 
-// действия:
-	preventDefault(); // отключаем кнопки
-
-
 	$(window).on('load', function() {
 // действия после загрузки:
+		selResume();
+		positionStart();
 
+	});
+	$(window).on('resize', function() {
+// действия после ресайза окна:
+		positionStart();
 
 	});
 });

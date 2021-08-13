@@ -1,3 +1,4 @@
-const suilContainer = ('.suit')
+const suitContainer = ('.suit')
 const suitItem = $('.suit__item');
-const positionSet = $('#position_set');
+const resetSuit = $('#reset_suit');
+

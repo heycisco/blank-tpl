@@ -81,6 +81,7 @@ img {
 :root {
   --color-text: #333;
   --color-bg: #eee;
+  --color-red: #cc0000;
   --c: 1;
   --page-width: unset;
   --content-width: unset;
@@ -159,34 +160,84 @@ img {
   align-content: center;
   position: relative;
   min-height: calc(100vh - (var(--section-padding) * 2));
-  border: 1px solid;
-}
-
-.heycisco-proj .main-block .homepage__content .suit #position_set {
-  width: 6px;
-  height: 6px;
-  background: red;
+  width: 100%;
 }
 
 .heycisco-proj .main-block .homepage__content .suit__item {
-  margin-right: var(--grid-gutter);
-  margin-bottom: var(--grid-gutter);
-  flex: 1 1 calc(50% - (var(--grid-gutter)) / 2);
-  height: calc(50vh - (var(--section-padding) * 1.6));
-  border: 1px solid;
+  padding: var(--grid-gutter);
+  flex: 1 1 50%;
+  height: calc(50vh - var(--section-padding));
   position: absolute;
-  display: none;
+  width: 50%;
+  transform: scale(0.35);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.4s;
+  transition-property: transform top left right bottom opacity;
 }
 
 .heycisco-proj .main-block .homepage__content .suit__item:nth-child(1) {
-  margin-right: 0;
-  transform-origin: 100% 100%;
-  right: 0;
-  bottom: 0;
+  transform-origin: 15% 15%;
+}
+
+.heycisco-proj .main-block .homepage__content .suit__item:nth-child(2) {
+  transform-origin: 85% 15%;
+}
+
+.heycisco-proj .main-block .homepage__content .suit__item:nth-child(3) {
+  transform-origin: 15% 85%;
+  color: var(--color-red);
+}
+
+.heycisco-proj .main-block .homepage__content .suit__item:nth-child(4) {
+  transform-origin: 85% 85%;
+  color: var(--color-red);
 }
 
 .heycisco-proj .main-block .homepage__content .suit__item svg {
   width: 100%;
   height: auto;
   max-height: 100%;
+}
+
+.heycisco-proj .main-block .homepage__content .suit #reset_suit {
+  position: fixed;
+  left: 50%;
+  top: -40px;
+  padding: 6px 24px;
+  font-size: 1.2em;
+  background: #666666;
+  color: var(--color-bg);
+  transform: translateX(-50%);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.4s;
+  transition-property: top;
+  display: flex;
+  align-items: center;
+}
+
+.heycisco-proj .main-block .homepage__content .suit #reset_suit svg {
+  height: 1em;
+}
+
+.heycisco-proj .main-block .homepage__content .suit.suit-selected #reset_suit {
+  top: 0;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.4s;
+  transition-property: top;
+}
+
+.heycisco-proj .main-block .homepage__content .suit.suit-selected .suit__item {
+  opacity: 0.6;
+  transform: scale(0.25);
+}
+
+.heycisco-proj .main-block .homepage__content .suit.suit-selected .suit__item.active {
+  opacity: 1;
+  transform: scale(1);
 }

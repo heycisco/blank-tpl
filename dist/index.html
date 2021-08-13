@@ -3,8 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" href="css/style.min.css">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
 <meta property="og:title" content="Project title here">
@@ -28,8 +27,25 @@
 <main class="main-block__homepage homepage">
 	<section class="homepage__content">
 		<div class="suit">
-			<div id="position_set"></div>
-			<div class="suit__item">
+			<div class="suit__item" id="s01">
+				<svg xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" viewBox="0 0 600 600">
+	<defs>
+		<mask id="stem-mask">
+			<rect width="100%" height="100%" fill="#fff" />
+			<circle cx="180" cy="490" r="100" fill="#000" />
+			<circle cx="420" cy="490" r="100" fill="#000" />
+		</mask>
+	</defs>
+	<rect x="200" y="400" height="200" width="200" fill="currentColor" mask="url(#stem-mask)" />
+	<g transform="rotate(225,300,300)" fill="currentColor">
+		<rect width="300" height="300" x="200" y="200" />
+		<circle cx="200" cy="350" r="150" />
+		<circle cx="350" cy="200" r="150" />
+	</g>
+</svg>
+
+			</div>
+			<div class="suit__item" id="s02">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
 	<defs>
 		<mask id="stem-mask">
@@ -44,51 +60,30 @@
 	<circle cx="420" cy="350" r="140" fill="currentColor" />
 </svg>
 			</div>
-			<div class="suit__item">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
-	<defs>
-		<mask id="stem-mask">
-			<rect width="100%" height="100%" fill="#fff" />
-			<circle cx="180" cy="490" r="100" fill="#000" />
-			<circle cx="420" cy="490" r="100" fill="#000" />
-		</mask>
-	</defs>
-	<rect x="200" y="400" height="200" width="200" fill="currentColor" mask="url(#stem-mask)" />
-	<circle cx="180" cy="350" r="140" fill="currentColor" />
-	<circle cx="300" cy="150" r="140" fill="currentColor" />
-	<circle cx="420" cy="350" r="140" fill="currentColor" />
+			<div class="suit__item" id="s03">
+				<svg xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" viewBox="0 0 600 600">
+	<rect x="100" y="100" width="400" height="400" style="fill: currentColor;" transform="rotate(45,300,300)" />
 </svg>
 			</div>
-			<div class="suit__item">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
-	<defs>
-		<mask id="stem-mask">
-			<rect width="100%" height="100%" fill="#fff" />
-			<circle cx="180" cy="490" r="100" fill="#000" />
-			<circle cx="420" cy="490" r="100" fill="#000" />
-		</mask>
-	</defs>
-	<rect x="200" y="400" height="200" width="200" fill="currentColor" mask="url(#stem-mask)" />
-	<circle cx="180" cy="350" r="140" fill="currentColor" />
-	<circle cx="300" cy="150" r="140" fill="currentColor" />
-	<circle cx="420" cy="350" r="140" fill="currentColor" />
+			<div class="suit__item" id="s04">
+				<svg xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" viewBox="0 0 600 600">
+	<g transform="rotate(45,300,300)" fill="currentColor">
+		<rect x="150" y="150" height="350" width="350" />
+		<circle cx="150" cy="325" r="175" />
+		<circle cx="325" cy="150" r="175" />
+	</g>
 </svg>
+
 			</div>
-			<div class="suit__item">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
-	<defs>
-		<mask id="stem-mask">
-			<rect width="100%" height="100%" fill="#fff" />
-			<circle cx="180" cy="490" r="100" fill="#000" />
-			<circle cx="420" cy="490" r="100" fill="#000" />
-		</mask>
-	</defs>
-	<rect x="200" y="400" height="200" width="200" fill="currentColor" mask="url(#stem-mask)" />
-	<circle cx="180" cy="350" r="140" fill="currentColor" />
-	<circle cx="300" cy="150" r="140" fill="currentColor" />
-	<circle cx="420" cy="350" r="140" fill="currentColor" />
+			<button id="reset_suit"><svg version="1.1" http://www.w3.org/2000/svg xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40.499px" height="40.5px" viewBox="0 0 40.499 40.5">
+	<g>
+		<path fill="currentColor" d="M39.622,21.746l-6.749,6.75c-0.562,0.562-1.326,0.879-2.122,0.879s-1.56-0.316-2.121-0.879l-6.75-6.75
+		c-1.171-1.171-1.171-3.071,0-4.242c1.171-1.172,3.071-1.172,4.242,0l1.832,1.832C27.486,13.697,22.758,9.25,17,9.25
+		c-6.064,0-11,4.935-11,11c0,6.064,4.936,11,11,11c1.657,0,3,1.343,3,3s-1.343,3-3,3c-9.373,0-17-7.626-17-17s7.627-17,17-17
+		c8.936,0,16.266,6.933,16.936,15.698l1.442-1.444c1.172-1.172,3.072-1.172,4.242,0C40.792,18.674,40.792,20.574,39.622,21.746z" />
+	</g>
 </svg>
-			</div>
+Reset</button>
 		</div>
 	</section>
 </main>
@@ -100,75 +95,6 @@
 </footer> -->
 
 <!-- Сетка для контроля вёрстки: -->
-<style>
-.show-grid::before {
-	--grid-color: #ff00001c;
-}
-
-
-#grid-btn {
-	position: fixed;
-	right: 12px;
-	bottom: 12px;
-	padding: 2px 4px;
-	background: #00000047;
-	color: #fff;
-	font-size: 12px;
-	cursor: pointer;
-	user-select: none;
-}
-
-#grid-btn:hover {
-	background: #red;
-}
-
-
-.show-grid:before {
-	position: fixed;
-	max-width: var(--page-width);
-	margin: 0 auto;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	content: '';
-	pointer-events: none;
-	--grid-column-width: calc((100% - var(--grid-gutter) * var(--grid-columns)) / var(--grid-columns));
-	border: solid transparent;
-	border-width: 0 calc(var(--grid-sides) - var(--grid-gutter) / 2);
-	background-image: repeating-linear-gradient(to right,
-		transparent 0,
-		transparent calc(var(--grid-gutter) / 2),
-		var(--grid-color) calc(var(--grid-gutter) / 2),
-		var(--grid-color) calc(var(--grid-column-width) + var(--grid-gutter) / 2),
-		transparent calc(var(--grid-column-width) + var(--grid-gutter) / 2),
-		transparent calc(var(--grid-column-width) + var(--grid-gutter)));
-	background-repeat: no-repeat;
-}
-
-.show-grid .main-header {
-	background: #0000001f;
-}
-
-.show-grid .main-footer {
-	background: #0000001f;
-}
-.show-grid section>* {
-	background: #0000001f;
-}
-</style>
-
-
-
-
-<script>
-	const bodyGrid = document.querySelector("body.main-body");
-
-	function showGrid(){
-		bodyGrid.classList.toggle("show-grid");
-	}
-</script>
-<div id="grid-btn" onclick="showGrid()">GRID</div>
 
 <script src="js/jquery-1.12.4.min.js"></script>
 <script src="js/script.min.js"></script>

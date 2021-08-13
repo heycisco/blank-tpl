@@ -1,4 +1,11 @@
-function selResume() {
+// jqs = jQuery.noConflict();
+jQuery(function() {
+	const suitContainer = ('.suit')
+const suitItem = $('.suit__item');
+const resetSuit = $('#reset_suit');
+
+; // тут переменные
+	function selResume() {
 let wasActivated = localStorage.getItem('selected');
 	if (wasActivated) {
 		let selectedId = localStorage.getItem('selected-suit');
@@ -73,4 +80,19 @@ $(resetSuit).on('click', function() {
 	localStorage.removeItem('selected');
 	localStorage.removeItem('selected-suit');
 	positionStart();
+});
+; // все функции
+
+
+	$(window).on('load', function() {
+// действия после загрузки:
+		selResume();
+		positionStart();
+
+	});
+	$(window).on('resize', function() {
+// действия после ресайза окна:
+		positionStart();
+
+	});
 });

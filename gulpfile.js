@@ -71,19 +71,19 @@ function css() {
 		)
 
 		// Группировка медиазапросов:
-		// .pipe(group_media())
+		.pipe(group_media())
 
 		// Добавление браузерных префиксов
-		// .pipe(
-		// 	autoprefixer({
-		// 		overrideBrowserslist: ["last 5 versions"],
-		// 		cascade: true
-		// 	})
-		// )
+		.pipe(
+			autoprefixer({
+				overrideBrowserslist: ["last 5 versions"],
+				cascade: true
+			})
+		)
 		// .pipe(dest(path.build.css))
 
 		// Сжатие CSS
-		// .pipe(clean_css())
+		.pipe(clean_css())
 
 		.pipe(
 			rename({
@@ -99,10 +99,10 @@ function js() {
 		.pipe(fileinclude())
 
 		// Сжатие JS:
-		// .pipe(dest(path.build.js))
-		// .pipe(
-		// 	uglify()
-		// 	)
+		.pipe(dest(path.build.js))
+		.pipe(
+			uglify()
+			)
 
 		.pipe(
 			rename({

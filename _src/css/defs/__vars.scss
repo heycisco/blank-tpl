@@ -1,4 +1,6 @@
 :root {
+
+
 // Цвета
 	--color-text: #333;
 	--color-bg: #eee;
@@ -8,8 +10,6 @@
 	--c: 1;
 	// Ограничение ширины страницы
 	--page-width: unset;
-	// Ограничение ширины контента
-	--content-width: 960px;
 	// Отступ контента
 	--content-indents: calc(48px * var(--c));
 	// Количество колонок
@@ -17,9 +17,14 @@
 	// Отступы от края экрана
 	--grid-sides: calc(32px * var(--c));
 	// Отступы между колонками и по бокам секций
-	--grid-gutter: calc(16px * var(--c));
+	--grid-gutter: calc(12px * var(--c));
+	// Подсчет размера колонок
+	--grid-column-width: calc((100vw - var(--grid-gutter) * var(--grid-columns)) / var(--grid-columns));
 	// Отступы сверху/снизу секций
 	--section-padding: var(--grid-gutter);
+	// Ограничение ширины контента
+	--content-width: calc(100% + var(--grid-gutter) - ((var(--grid-gutter)  + var(--grid-column-width)) * 2)); // Ширина контента -2 колонки
+	// --content-width: unset; // Нефиксированный размер контента
 
 // Адаптивность
 	@media (max-width: 1024px) {
@@ -29,6 +34,7 @@
 	@media (max-width: 760px) {
 		--c: 0.6;
 		--grid-columns: 4;
+		--content-width: 100%;
 	}
 }
 

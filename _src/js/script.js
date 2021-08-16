@@ -12,6 +12,10 @@ jQuery(function() {
 	$(window).on('load', function() {
 // действия после загрузки:
 
+	$(window).on('resize', function() {
+// действия при ресайзе окна:
+
+	});
 
 	});
 });

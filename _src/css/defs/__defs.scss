@@ -19,7 +19,6 @@
 	color: var(--color-text);
 	background: var(--color-bg);
 	font-family: $font;
-	line-height: 1.5;
 
 	.main-header,
 	.main-footer,
@@ -42,6 +41,23 @@
 		main { // <= Общий для всех видов контента блок
 			width: 100%;
 			padding: var(--content-indents) var(--grid-sides);
+		}
+	}
+
+	.content {
+		line-height: 1.6;
+		p {
+			margin-bottom: 0.85em;
+		}
+		a {
+			border-bottom: 1px solid var(--color-text);
+
+		}
+		ul {
+				li {
+				list-style: disc;
+				list-style-position: inside;
+			}
 		}
 	}
 }

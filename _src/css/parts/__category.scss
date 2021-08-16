@@ -1,5 +1,16 @@
 .category {
 	&__posts {
-		&__article {}
+		&__article {
+			&.wrapper {
+				position: relative;
+				a {
+					width: 100%;
+					height: 100%;
+					display: block;
+					position: absolute;
+					border-bottom: none;
+				}
+			}
+		}
 	}
 }

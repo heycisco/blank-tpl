@@ -1,29 +1,29 @@
-jQuery(document).ready(function (jQuery) {
+jQuery(document).ready(function ($) {
 var deviceAgent = navigator.userAgent.toLowerCase();
 if (deviceAgent.match(/(iphone|ipod|ipad)/)) {
-jQuery("html").addClass("ios");
+$("html").addClass("ios");
 }
 if (navigator.userAgent.search("MSIE") >= 0) {
-jQuery("html").addClass("ie");
+$("html").addClass("ie");
 }
 else if (navigator.userAgent.search("Chrome") >= 0) {
-jQuery("html").addClass("chrome");
+$("html").addClass("chrome");
 }
 else if (navigator.userAgent.search("Firefox") >= 0) {
-jQuery("html").addClass("firefox");
+$("html").addClass("firefox");
 }
 else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
-jQuery("html").addClass("safari");
+$("html").addClass("safari");
 }
 else if (navigator.userAgent.search("Opera") >= 0) {
-jQuery("html").addClass("opera");
+$("html").addClass("opera");
 }
-jQuery(".menu-icon").on("click", function () {
-jQuery("#menu").toggleClass("toggled");
+$(".menu-icon").on("click", function () {
+$("#menu").toggleClass("toggled");
 });
-jQuery(".menu-toggle").on("keypress", function(e) {
+$(".menu-toggle").on("keypress", function(e) {
 if(e.which == 13) {
-jQuery("#menu").toggleClass("toggled");
+$("#menu").toggleClass("toggled");
 }
 });
 });

@@ -1,7 +1,11 @@
 {
+	"jq_noconflict": [
+		"// jqs = jQuery.noConflict();",
+		"jqs = jQuery.noConflict();"
+	],
 	"jq_prefix": [
-		"$",
-		"jQuery"
+		"$(",
+		"jqs("
 	],
 	"css_urls": [
 		"url(\"../",

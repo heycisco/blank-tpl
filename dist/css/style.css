@@ -171,6 +171,10 @@ img {
   justify-content: space-between;
 }
 
+.heycisco-proj .main-header .menu-main-menu-container {
+  display: flex;
+}
+
 .heycisco-proj .main-block .category__posts__article.wrapper {
   position: relative;
 }

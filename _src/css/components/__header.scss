@@ -1,6 +1,9 @@
 .main-header {
 	justify-content: space-between;
-	.branding {
+	&__branding {
 
+	}
+	.menu-main-menu-container {
+		display: flex;
 	}
 }

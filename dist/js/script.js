@@ -14,14 +14,14 @@ function preventDefault() {
 
 // действия:
 	preventDefault(); // отключаем кнопки
-
+console.log('start');
 
 	$(window).on('load', function() {
 // действия после загрузки:
-
+console.log('loaded!');
 	$(window).on('resize', function() {
 // действия при ресайзе окна:
-
+console.log('resized');
 	});
 
 	});

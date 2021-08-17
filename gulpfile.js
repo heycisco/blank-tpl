@@ -22,9 +22,9 @@ let path = {
 		fonts: source_folder + "/fonts/*"
 	},
 	wp: {
-		php: [source_folder + "/php/**/*.php", source_folder + "/php/js/*.js", source_folder + "/php/style.css", source_folder + "/php/screenshot.*"],
+		php: [source_folder + "/php/**/*.php", source_folder + "/php/style.css", source_folder + "/php/screenshot.*"],
 		css: project_folder + "/css/*",
-		js: [project_folder + "/js/**/*.js", "!" + project_folder + "/js/jquery*.js"],
+		js: [source_folder + "/php/js/*.js", "!" + project_folder + "/js/{jquery,script}*.js"],
 		js_main: project_folder + "/js/script.js",
 		img: project_folder + "/img/**/*",
 		fonts: project_folder + "/fonts/*"
@@ -183,7 +183,12 @@ async function wordpressBuild() {
 			})
 		)
 		.pipe(dest(wp_folder));
+
 	src(path.wp.js)
+		.pipe(dest(wp_folder + "/js/"));
+
+		
+	src(path.wp.js_main)
 		.pipe(
 			replace(
 				wpc.jq_prefix[0], wpc.jq_prefix[1]
@@ -195,6 +200,8 @@ async function wordpressBuild() {
 			)
 		)
 		.pipe(dest(wp_folder + "/js/"));
+
+		
 	src(path.wp.img).pipe(dest(wp_folder + "/images/"));
 	src(path.wp.fonts).pipe(dest(wp_folder + "/fonts/"));
 }

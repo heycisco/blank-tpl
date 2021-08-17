@@ -1,10 +1,10 @@
-jqs = jQuery.noConflict();
+jQuery.noConflict();
 jQuery(function() {
 	; // тут переменные
 	
 // Отключение действий при нажатии на кнопки
 function preventDefault() {
-	jqs('button').on('click', function(event) {
+	jQuery('button').on('click', function(event) {
 		event.preventDefault();
 	});
 }
@@ -14,14 +14,14 @@ function preventDefault() {
 
 // действия:
 	preventDefault(); // отключаем кнопки
+console.log('start');
 
-
-	jqs(window).on('load', function() {
+	jQuery(window).on('load', function() {
 // действия после загрузки:
-
-	jqs(window).on('resize', function() {
+console.log('loaded!');
+	jQuery(window).on('resize', function() {
 // действия при ресайзе окна:
-
+console.log('resized');
 	});
 
 	});

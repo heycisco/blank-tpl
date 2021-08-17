@@ -213,7 +213,7 @@ function cleanWp(params) {
 
 
 let wordpress = gulp.series(cleanWp, wordpressBuild);
-let build = gulp.series(clean, gulp.parallel(js, css, ico, html, images, fonts), wordpress);
+let build = gulp.series(clean, gulp.parallel(js, css, ico, html, images, fonts));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 

@@ -1,5 +1,11 @@
+<?php
+/*
+Template Name: Full width
+*/
+?>
+
 <?php get_header(); ?>
-<main class="main-block__page page">
+<main class="main-block__page page page-full-width">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <header class="header">
 <h1 class="entry-title"><?php the_title(); ?></h1>

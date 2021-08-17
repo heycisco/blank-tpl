@@ -1,0 +1,1 @@
+<div class="main-header__search searchform"><?php get_search_form(); ?></div>

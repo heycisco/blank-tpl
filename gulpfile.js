@@ -78,7 +78,7 @@ function html() {
 }
 
 function ico() {
-	src(path.src.ico)
+	return src(path.src.ico)
 		.pipe(dest(path.build.html))
 }
 
@@ -162,7 +162,7 @@ function images() {
 }
 
 function fonts() {
-	src(path.src.fonts)
+	return src(path.src.fonts)
 		.pipe(dest(path.build.fonts))
 }
 
@@ -171,11 +171,17 @@ async function wordpressBuild() {
 	src(path.wp.css)
 	.pipe(
 			rename({
-				basename: "theme"
+				basename: "main"
 			})
 		)
 	.pipe(dest(wp_folder));
-	src(path.wp.js).pipe(dest(wp_folder + "/js/"));
+	src(path.wp.js)
+	.pipe(
+			rename({
+				basename: "scripts"
+			})
+		)
+.pipe(dest(wp_folder + "/js/"));
 	src(path.wp.img).pipe(dest(wp_folder + "/images/"));
 	src(path.wp.fonts).pipe(dest(wp_folder + "/fonts/"));
 }

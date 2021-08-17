@@ -212,9 +212,9 @@ function cleanWp(params) {
 }
 
 
-let build = gulp.series(clean, gulp.parallel(js, css, ico, html, images, fonts));
-let watch = gulp.parallel(build, watchFiles, browserSync);
 let wordpress = gulp.series(cleanWp, wordpressBuild);
+let build = gulp.series(clean, gulp.parallel(js, css, ico, html, images, fonts), wordpress);
+let watch = gulp.parallel(build, watchFiles, browserSync);
 
 
 exports.fonts = fonts;

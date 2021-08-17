@@ -141,6 +141,8 @@ img {
   max-width: var(--content-width);
   flex: 1 1 auto;
   align-content: flex-start;
+  line-height: 1.5;
+  font-size: 16px;
 }
 
 .heycisco-proj .main-block.wrapper main {

@@ -24,7 +24,8 @@ let path = {
 	wp: {
 		php: [source_folder + "/php/**/*.php", source_folder + "/php/style.css", source_folder + "/php/screenshot.*"],
 		css: project_folder + "/css/*",
-		js: [project_folder + "/js/**/*.js", "!" + project_folder + "/js/jquery*.js"],
+		js: [project_folder + "/js/**/*.js", source_folder + "/php/js/*.js", "!" + project_folder + "/js/jquery*.js"],
+		js_main: project_folder + "/js/script.js",
 		img: project_folder + "/img/**/*",
 		fonts: project_folder + "/fonts/*"
 	},
@@ -52,7 +53,7 @@ let { src, dest } = require('gulp'),
 	clean_css = require("gulp-clean-css"),
 	rename = require("gulp-rename"),
 	replace = require("gulp-replace");
-	uglify = require("gulp-uglify-es").default,
+uglify = require("gulp-uglify-es").default,
 	imagemin = require("gulp-imagemin"),
 	replace = require('gulp-replace'),
 	webp = require("gulp-webp");
@@ -171,29 +172,24 @@ function fonts() {
 async function wordpressBuild() {
 	src(path.wp.php).pipe(dest(wp_folder));
 	src(path.wp.css)
-	.pipe(
-		replace(
-			wpc.css_urls[0], wpc.css_urls[1]
+		.pipe(
+			replace(
+				wpc.css_urls[0], wpc.css_urls[1]
 			)
 		)
-	.pipe(
+		.pipe(
 			rename({
 				basename: "main"
 			})
 		)
-	.pipe(dest(wp_folder));
+		.pipe(dest(wp_folder));
 	src(path.wp.js)
-	.pipe(
-		replace(
-			wpc.jq_prefix[0], wpc.jq_prefix[1]
+		.pipe(
+			replace(
+				wpc.jq_prefix[0], wpc.jq_prefix[1]
 			)
 		)
-	.pipe(
-			rename({
-				basename: "scripts"
-			})
-		)
-.pipe(dest(wp_folder + "/js/"));
+		.pipe(dest(wp_folder + "/js/"));
 	src(path.wp.img).pipe(dest(wp_folder + "/images/"));
 	src(path.wp.fonts).pipe(dest(wp_folder + "/fonts/"));
 }
@@ -210,6 +206,7 @@ function watchFiles(params) {
 function clean(params) {
 	return del(path.clean.simple);
 }
+
 function cleanWp(params) {
 	return del(path.clean.wp);
 }

@@ -22,7 +22,7 @@ wp_enqueue_script( 'masonry' );
 wp_register_script( 'wow', get_template_directory_uri() . '/js/wow.min.js' );
 wp_enqueue_script( 'wow' );
 */
-wp_register_script( 'heycisco-dev-scripts', get_template_directory_uri() . '/js/scripts.js' );
+wp_register_script( 'heycisco-dev-scripts', get_template_directory_uri() . '/js/script.js' );
 wp_register_script( 'heycisco-dev-scripts', get_template_directory_uri() . '/js/wp.js' );
 wp_enqueue_script( 'heycisco-dev-scripts' );
 wp_register_script( 'heycisco-dev-videos', get_template_directory_uri() . '/js/videos.js' );

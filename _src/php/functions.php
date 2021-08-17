@@ -6,7 +6,10 @@ add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form'
 add_theme_support( 'responsive-embeds' );
 add_theme_support( 'align-wide' );
 add_theme_support( 'customize-selective-refresh-widgets' );
-register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'generic' ) ) );
+register_nav_menus( array( 
+	'main-menu' => esc_html__( 'Main menu', 'generic' ),
+	'second-menu' => esc_html__( 'Secondary menu', 'generic' )
+ ) );
 }
 add_action( 'wp_enqueue_scripts', 'generic_load_scripts' );
 function generic_load_scripts() {
@@ -83,3 +86,8 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+//Disable gutenberg style in Front
+function wps_deregister_styles() {
+    wp_dequeue_style( 'wp-block-library' );
+}
+add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );

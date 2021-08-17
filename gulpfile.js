@@ -168,7 +168,13 @@ function fonts() {
 
 async function wordpressBuild() {
 	src(path.wp.php).pipe(dest(wp_folder));
-	src(path.wp.css).pipe(dest(wp_folder));
+	src(path.wp.css)
+	.pipe(
+			rename({
+				basename: "theme"
+			})
+		)
+	.pipe(dest(wp_folder));
 	src(path.wp.js).pipe(dest(wp_folder + "/js/"));
 	src(path.wp.img).pipe(dest(wp_folder + "/images/"));
 	src(path.wp.fonts).pipe(dest(wp_folder + "/fonts/"));

@@ -1,28 +1,42 @@
+let package = require('./package');
+let project_name = package['name'];
 let project_folder = "dist";
 let source_folder = "_src";
+let wp_folder = "wp_theme/" + project_name;
 
 let path = {
 	build: {
-		html: project_folder + "/",
+		html: project_folder + "",
 		css: project_folder + "/css/",
 		js: project_folder + "/js/",
 		img: project_folder + "/img/",
 		fonts: project_folder + "/fonts/"
 	},
 	src: {
-		html: [source_folder + "/*.{html,php,ico}", "!" + source_folder + "/{__,z__}*.{html,php,ico}"],
+		html: [source_folder + "/*.html", "!" + source_folder + "/{__,z__,wp__}*.html"],
+		ico: source_folder + "/favicon.ico",
 		css: [source_folder + "/css/*.scss", "!" + source_folder + "/css/{__,z__}*.scss"],
 		js: [source_folder + "/js/*.js", "!" + source_folder + "/js/{__,z__}*.js"],
 		img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
 		fonts: source_folder + "/fonts/*"
 	},
+	wp: {
+		php: [source_folder + "/php/**/*.php", source_folder + "/php/style.css", source_folder + "/php/screenshot.*"],
+		css: project_folder + "/css/*",
+		js: [project_folder + "/js/*.js", "!" + project_folder + "/js/jquery*.js"],
+		img: project_folder + "/img/**/*",
+		fonts: project_folder + "/fonts/*"
+	},
 	watch: {
-		html: source_folder + "/**/*.{html,php,ico}",
+		html: source_folder + "/**/*.html",
 		css: source_folder + "/css/**/*.{scss,css}",
 		js: source_folder + "/js/**/*.js",
 		img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}"
 	},
-	clean: "./" + project_folder + "/"
+	clean: {
+		simple: "./" + project_folder + "/",
+		wp: "./wp_theme/"
+	},
 }
 
 
@@ -38,6 +52,7 @@ let { src, dest } = require('gulp'),
 	rename = require("gulp-rename"),
 	uglify = require("gulp-uglify-es").default,
 	imagemin = require("gulp-imagemin"),
+	replace = require('gulp-replace'),
 	webp = require("gulp-webp");
 // webphtml = require ("gulp-webp-html");
 
@@ -60,6 +75,11 @@ function html() {
 		// .pipe(webphtml())
 		.pipe(dest(path.build.html))
 		.pipe(browsersync.stream())
+}
+
+function ico() {
+	src(path.src.ico)
+		.pipe(dest(path.build.html))
 }
 
 function css() {
@@ -87,7 +107,7 @@ function css() {
 
 		.pipe(
 			rename({
-				extname: ".min.css"
+				extname: ".css"
 			})
 		)
 		.pipe(dest(path.build.css))
@@ -106,7 +126,7 @@ function js() {
 
 		.pipe(
 			rename({
-				extname: ".min.js"
+				extname: ".js"
 			})
 		)
 		.pipe(dest(path.build.js))
@@ -146,6 +166,13 @@ function fonts() {
 		.pipe(dest(path.build.fonts))
 }
 
+async function wordpressBuild() {
+	src(path.wp.php).pipe(dest(wp_folder));
+	src(path.wp.css).pipe(dest(wp_folder));
+	src(path.wp.js).pipe(dest(wp_folder + "/js/"));
+	src(path.wp.img).pipe(dest(wp_folder + "/images/"));
+	src(path.wp.fonts).pipe(dest(wp_folder + "/fonts/"));
+}
 
 
 function watchFiles(params) {
@@ -157,12 +184,16 @@ function watchFiles(params) {
 
 
 function clean(params) {
-	return del(path.clean);
+	return del(path.clean.simple);
+}
+function cleanWp(params) {
+	return del(path.clean.wp);
 }
 
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts));
+let build = gulp.series(clean, gulp.parallel(js, css, ico, html, images, fonts));
 let watch = gulp.parallel(build, watchFiles, browserSync);
+let wordpress = gulp.series(cleanWp, wordpressBuild);
 
 
 exports.fonts = fonts;
@@ -171,5 +202,6 @@ exports.js = js;
 exports.css = css;
 exports.html = html;
 exports.build = build;
+exports.wordpress = wordpress;
 exports.watch = watch;
 exports.default = watch;

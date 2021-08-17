@@ -4,7 +4,7 @@ jQuery(function() {
 	
 // Отключение действий при нажатии на кнопки
 function preventDefault() {
-	$('button').on('click', function(event) {
+	jQuery('button').on('click', function(event) {
 		event.preventDefault();
 	});
 }
@@ -16,10 +16,10 @@ function preventDefault() {
 	preventDefault(); // отключаем кнопки
 
 
-	$(window).on('load', function() {
+	jQuery(window).on('load', function() {
 // действия после загрузки:
 
-	$(window).on('resize', function() {
+	jQuery(window).on('resize', function() {
 // действия при ресайзе окна:
 
 	});

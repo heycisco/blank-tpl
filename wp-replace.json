@@ -1,0 +1,10 @@
+{
+	"jq_prefix": [
+		"$",
+		"jQuery"
+	],
+	"css_urls": [
+		"url(\"../",
+		"url(\""
+	]
+}

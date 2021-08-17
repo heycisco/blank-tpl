@@ -1,4 +1,5 @@
 let package = require('./package');
+let wpc = require('./wp-replace');
 let project_name = package['name'];
 let project_folder = "dist";
 let source_folder = "_src";
@@ -23,7 +24,7 @@ let path = {
 	wp: {
 		php: [source_folder + "/php/**/*.php", source_folder + "/php/style.css", source_folder + "/php/screenshot.*"],
 		css: project_folder + "/css/*",
-		js: [project_folder + "/js/*.js", "!" + project_folder + "/js/jquery*.js"],
+		js: [project_folder + "/js/**/*.js", "!" + project_folder + "/js/jquery*.js"],
 		img: project_folder + "/img/**/*",
 		fonts: project_folder + "/fonts/*"
 	},
@@ -50,6 +51,7 @@ let { src, dest } = require('gulp'),
 	group_media = require("gulp-group-css-media-queries"),
 	clean_css = require("gulp-clean-css"),
 	rename = require("gulp-rename"),
+	replace = require("gulp-replace");
 	uglify = require("gulp-uglify-es").default,
 	imagemin = require("gulp-imagemin"),
 	replace = require('gulp-replace'),
@@ -170,12 +172,22 @@ async function wordpressBuild() {
 	src(path.wp.php).pipe(dest(wp_folder));
 	src(path.wp.css)
 	.pipe(
+		replace(
+			wpc.css_urls[0], wpc.css_urls[1]
+			)
+		)
+	.pipe(
 			rename({
 				basename: "main"
 			})
 		)
 	.pipe(dest(wp_folder));
 	src(path.wp.js)
+	.pipe(
+		replace(
+			wpc.jq_prefix[0], wpc.jq_prefix[1]
+			)
+		)
 	.pipe(
 			rename({
 				basename: "scripts"

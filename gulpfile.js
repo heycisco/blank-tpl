@@ -59,19 +59,8 @@ let { src, dest } = require('gulp'),
 	replace = require('gulp-replace'),
 	webp = require("gulp-webp"),
 	removeHtmlComments = require("gulp-remove-html-comments"),
-	webphtml = require ("gulp-webp-html"),
-	simpleGit = require('gulp-simple-git');
+	webphtml = require ("gulp-webp-html");
 
-let gitOptions = {
-  remote: 'blank-tpl', //default => 'origin'
-  branch: 'main', //default => {local working branch}
-  addAll: true, //`git add .` :: default => false
-  commit: true, //`git commit` :: default => false
-  message: 'auto commit', //`-m "message to commit"` :: default => [BRANCH: {currentBranch}] | [USER: {user}] | AUTO-COMMIT :: no message for commit.
-  push: true, //`git push` :: default => false
-};
-
-let gitUpd = simpleGit(gitOptions);
 
 
 function browserSync(params) {
@@ -248,7 +237,7 @@ function cleanWp(params) {
 }
 
 
-let build = gulp.series(clean, cleanWp, gulp.parallel(js, css, ico, html, images, fonts), gulp.parallel(wordpressBuild, gitUpd));
+let build = gulp.series(clean, cleanWp, gulp.parallel(js, css, ico, html, images, fonts), gulp.parallel(wordpressBuild));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 

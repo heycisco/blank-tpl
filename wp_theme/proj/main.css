@@ -206,6 +206,11 @@ img {
   display: none;
 }
 
+.heycisco-proj .main-header__menu .menu-main-menu-container {
+  display: flex;
+  align-items: stretch;
+}
+
 .heycisco-proj .main-header__menu .menu-main-menu-container ul.menu {
   display: flex;
   align-items: center;
@@ -216,6 +221,10 @@ img {
 .heycisco-proj .main-header__menu .menu-main-menu-container ul.menu > li {
   flex: 1 0 auto;
   margin-right: 6px;
+}
+
+.heycisco-proj .main-header__menu .menu-main-menu-container ul.menu > li a {
+  text-transform: uppercase;
 }
 
 .heycisco-proj .main-header__menu .menu-main-menu-container ul.menu > li:last-child {

@@ -254,3 +254,18 @@ img {
   position: absolute;
   border-bottom: none;
 }
+
+.heycisco-proj .main-block .category__posts .posts-navigation .nav-links {
+  position: relative;
+}
+
+.heycisco-proj .main-block .category__posts .posts-navigation .nav-links .nav-next, .heycisco-proj .main-block .category__posts .posts-navigation .nav-links .nav-previous {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.heycisco-proj .main-block .category__posts .posts-navigation .nav-links .nav-next {
+  right: 0;
+  left: unset;
+}

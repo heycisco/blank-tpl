@@ -264,8 +264,13 @@ img {
   text-align: right;
 }
 
-.heycisco-proj .search-form {
+.heycisco-proj .heycisco-proj .search-form {
   display: flex;
+  align-items: center;
+}
+
+.heycisco-proj .heycisco-proj .search-form #searchsubmit {
+  margin-left: 4px;
 }
 
 .heycisco-proj .main-block .category__posts__article {

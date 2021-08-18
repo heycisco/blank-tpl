@@ -238,7 +238,7 @@ img {
 .heycisco-proj .main-header__menu .menu-main-menu-container ul.menu {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -276,13 +276,20 @@ img {
   text-align: right;
 }
 
-.heycisco-proj .heycisco-proj .search-form {
+.heycisco-proj .search-form {
   display: flex;
   align-items: center;
 }
 
-.heycisco-proj .heycisco-proj .search-form #searchsubmit {
+.heycisco-proj .search-form #s {
+  padding: 1px 0;
+}
+
+.heycisco-proj .search-form #searchsubmit {
   margin-left: 4px;
+  cursor: pointer;
+  padding: 0 4px;
+  border: 1px solid var(--color-text);
 }
 
 .heycisco-proj .main-block main article ol li {

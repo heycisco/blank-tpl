@@ -183,6 +183,11 @@ img {
   background: rgba(0, 0, 0, 0.3);
 }
 
+button {
+  border: 1px solid var(--color-text);
+  padding: 0 3px;
+}
+
 .heycisco-proj .main-header {
   justify-content: space-between;
 }

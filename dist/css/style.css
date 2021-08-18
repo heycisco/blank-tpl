@@ -171,6 +171,18 @@ img {
   list-style-position: inside;
 }
 
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+}
+
 .heycisco-proj .main-header {
   justify-content: space-between;
 }
@@ -271,6 +283,10 @@ img {
 
 .heycisco-proj .heycisco-proj .search-form #searchsubmit {
   margin-left: 4px;
+}
+
+.heycisco-proj .main-block main article ol li {
+  margin-left: 1em;
 }
 
 .heycisco-proj .main-block .category__posts__article {

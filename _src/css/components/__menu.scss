@@ -14,11 +14,11 @@
 			ul.menu {
 				display: flex;
 				align-items: center;
-				justify-content: space-between;
+				justify-content: center;
 				flex-wrap: wrap;
 
 				>li {
-					flex: 1 0 auto;
+					flex: 0 0 auto;
 					margin-right: 6px;
 					a {
 						text-transform: uppercase;

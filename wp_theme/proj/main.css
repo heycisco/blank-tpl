@@ -214,12 +214,12 @@ img {
 .heycisco-proj .main-header__menu .menu-main-menu-container ul.menu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .heycisco-proj .main-header__menu .menu-main-menu-container ul.menu > li {
-  flex: 1 0 auto;
+  flex: 0 0 auto;
   margin-right: 6px;
 }
 

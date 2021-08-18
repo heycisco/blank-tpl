@@ -15,23 +15,53 @@
 <body class="heycisco-proj main-body">
 
 <header class="main-header">
-	<div class="branding-main">
-	BRANDING
+	<div class="main-header__branding">
+<div class="main-header__branding__title">
+		<h1><a href="http://dev.starchenkov.pro/" title="Starchenkov Dev" rel="home">Starchenkov Dev</a></h1>
+	</div>
+<div class="main-header__branding__description">Сайт для начального развертывания Wordpress</div>
 </div>
+	<nav class="main-header__menu main-menu" role="navigation">
+	<button type="button" class="menu-toggle"><span class="menu-icon">☰</span><span class="menu-text screen-reader-text"> Menu</span></button>
+	<div class="menu-main-menu-container">
+		<ul id="menu-main-menu" class="menu">
+			<li id="menu-item-2035" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-2035"><a href="http://dev.starchenkov.pro/">Главная</a></li>
+			<li id="menu-item-2036" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2036"><a href="http://dev.starchenkov.pro/ab-sunt-ut-et-at-unde/">Просто страница</a></li>
+			<li id="menu-item-2037" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2037"><a href="http://dev.starchenkov.pro/asperiores-non-explicabo-at/">На всю ширину</a></li>
+			<li id="menu-item-2038" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2038"><a href="http://dev.starchenkov.pro/no-category/">Много записей</a></li>
+			<li id="menu-item-2039" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2039"><a href="http://dev.starchenkov.pro/standart/">Мало записей</a></li>
+			<li id="menu-item-2040" class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-2040"><a href="http://dev.starchenkov.pro/no-category/qui-praesentium-nam-quas-voluptas/" aria-current="page">Отдельная запись</a></li>
+		</ul>
+	</div>
+</nav>
 
-	<div class="menu-main">
-	MENU
-</div>
 </header>
 <div class="main-block wrapper">
 
 
 
+<aside class="main-sidebar" role="complementary">
+	<div class="primary">
+		<ul class="sidebar-widget-list">
+			<li id="block-2" class="widget-container widget_block widget_search">
+				<form role="search" method="get" action="http://dev.starchenkov.pro/" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search"><label for="wp-block-search__input-1" class="wp-block-search__label">Поиск</label>
+					<div class="wp-block-search__inside-wrapper"><input type="search" id="wp-block-search__input-1" class="wp-block-search__input" name="s" value="" placeholder="Текст…" required=""><button type="submit" class="wp-block-search__button ">Искать</button></div>
+				</form>
+			</li>
+			<li id="block-3" class="widget-container widget_block">
+				<div class="wp-block-buttons">
+					<div class="wp-block-button"><a class="wp-block-button__link">Какая-то кнопка</a></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</aside>
 
 
 </div>
 <footer class="main-footer">
-	COPYRIGHT
+	<div class="main-footer__copyright">
+© 2021 Starchenkov Dev</div>
 </footer>
 
 <!-- Сетка для контроля вёрстки: -->

@@ -1,5 +1,5 @@
 </div>
-<footer class="main-footer" role="contentinfo">
+<footer class="main-footer">
 <?php get_template_part( 'inc/menu-footer' ); ?>
 <?php get_template_part( 'inc/copyright' ); ?>
 </footer>

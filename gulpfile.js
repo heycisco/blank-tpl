@@ -31,6 +31,7 @@ let path = {
 	},
 	watch: {
 		html: source_folder + "/**/*.html",
+		php: source_folder + "/php/**/*",
 		css: source_folder + "/css/**/*.{scss,css}",
 		js: source_folder + "/js/**/*.js",
 		img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}"
@@ -215,6 +216,7 @@ function watchFiles(params) {
 	gulp.watch([path.watch.css], css);
 	gulp.watch([path.watch.js], js);
 	gulp.watch([path.watch.img], images);
+	gulp.watch([path.watch.php], wordpress);
 }
 
 

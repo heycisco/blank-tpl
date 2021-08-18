@@ -301,6 +301,10 @@ button, .wp-block-button a {
   margin-left: 1em;
 }
 
+.heycisco-proj .main-block main article a {
+  color: #f00;
+}
+
 .heycisco-proj .main-block .category__posts__article {
   border: 1px solid var(--color-text);
   margin: var(--grid-gutter) 0;

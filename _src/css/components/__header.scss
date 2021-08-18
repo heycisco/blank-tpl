@@ -1,9 +1,22 @@
 .main-header {
 	justify-content: space-between;
-	&__branding {
 
+	&__branding {
+		&__title {
+			a {
+
+				&:focus,
+				&:hover,
+				&:active,
+				&:visited {
+					color: inherit;
+				}
+			}
+		}
 	}
-	.menu-main-menu-container {
+
+	&__search {
 		display: flex;
+		align-items: center;
 	}
 }

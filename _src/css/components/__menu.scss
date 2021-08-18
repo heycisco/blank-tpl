@@ -1,3 +1,26 @@
-.menu-main {
-	
+.main-header__menu {
+	display: flex;
+	align-items: stretch;
+	.menu-toggle {
+		display: none;
+	}
+
+	.menu-main {
+
+		&-menu-container {
+			ul.menu {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				>li {
+					flex: 1 0 auto;
+					margin-right: 6px;
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
 }

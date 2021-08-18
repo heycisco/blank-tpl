@@ -31,7 +31,9 @@
 		justify-content: center;
 		align-content: center;
 	}
-
+	.main-sidebar {
+		padding: var(--content-indents) var(--grid-gutter);
+	}
 	.main-block.wrapper { // <= Блок с контентом между хедером и футером
 		padding: var(--section-padding) 0;
 		max-width: var(--content-width);

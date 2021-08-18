@@ -4,12 +4,20 @@
 
 	.menu-toggle {
 		display: none;
+
+		@media (max-width: 760px) {
+			display: flex;
+		}
 	}
 
 	.menu-main {
 		&-menu-container {
 			display: flex;
 			align-items: stretch;
+
+			@media (max-width: 760px) {
+				display: none;
+			}
 
 			ul.menu {
 				display: flex;
@@ -20,6 +28,7 @@
 				>li {
 					flex: 0 0 auto;
 					margin-right: 6px;
+
 					a {
 						text-transform: uppercase;
 					}

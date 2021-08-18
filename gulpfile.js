@@ -170,6 +170,8 @@ function fonts() {
 		.pipe(dest(path.build.fonts))
 }
 
+
+
 function wordpress() {
 
 	src(path.wp.php).pipe(dest(wp_folder));
@@ -210,13 +212,15 @@ function wordpress() {
 	return src(path.wp.php);
 }
 
+let wordpressBuild = wordpress;
+
 
 function watchFiles(params) {
 	gulp.watch([path.watch.html], html);
 	gulp.watch([path.watch.css], css);
 	gulp.watch([path.watch.js], js);
 	gulp.watch([path.watch.img], images);
-	gulp.watch([path.watch.wp_php, path.watch.html, path.watch.css, path.watch.js, path.watch.img], wordpressBuild);
+	gulp.watch([path.watch.wp_php, path.watch.html, path.watch.css, path.watch.js, path.watch.img], { delay: 2000 }, wordpressBuild);
 }
 
 
@@ -229,7 +233,6 @@ function cleanWp(params) {
 }
 
 
-let wordpressBuild = wordpress;
 let build = gulp.series(clean, cleanWp, gulp.parallel(js, css, ico, html, images, fonts), gulp.parallel(wordpressBuild));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 

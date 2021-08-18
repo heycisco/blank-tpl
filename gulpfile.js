@@ -77,7 +77,7 @@ function html() {
 		.pipe(fileinclude())
 		// .pipe(webphtml())
 		.pipe(dest(path.build.html))
-		.pipe(browsersync.stream())
+		.pipe(browsersync.stream());
 }
 
 function ico() {
@@ -169,8 +169,10 @@ function fonts() {
 		.pipe(dest(path.build.fonts))
 }
 
-async function wordpressBuild() {
+function wordpress() {
+
 	src(path.wp.php).pipe(dest(wp_folder));
+
 	src(path.wp.css)
 		.pipe(
 			replace(
@@ -187,7 +189,7 @@ async function wordpressBuild() {
 	src(path.wp.js)
 		.pipe(dest(wp_folder + "/js/"));
 
-		
+
 	src(path.wp.js_main)
 		.pipe(
 			replace(
@@ -201,9 +203,10 @@ async function wordpressBuild() {
 		)
 		.pipe(dest(wp_folder + "/js/"));
 
-		
+
 	src(path.wp.img).pipe(dest(wp_folder + "/images/"));
 	src(path.wp.fonts).pipe(dest(wp_folder + "/fonts/"));
+	return src(path.wp.php);
 }
 
 
@@ -224,8 +227,8 @@ function cleanWp(params) {
 }
 
 
-let wordpress = gulp.series(cleanWp, wordpressBuild);
-let build = gulp.series(clean, gulp.parallel(js, css, ico, html, images, fonts));
+let wordpressBuild = wordpress;
+let build = gulp.series(clean, cleanWp, gulp.parallel(js, css, ico, html, images, fonts), gulp.parallel(wordpressBuild));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 
@@ -236,5 +239,6 @@ exports.css = css;
 exports.html = html;
 exports.build = build;
 exports.wordpress = wordpress;
+exports.wordpressBuild = wordpressBuild;
 exports.watch = watch;
 exports.default = watch;

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
+<?php get_template_part( 'inc/meta' ); ?>
 <?php wp_head(); ?>
 </head>
 <body class="heycisco-proj main-body" <?php body_class(); ?>>

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="content" role="main">
+<main class="main-block__404 404">
 <article class="post not-found">
 <header class="header">
 <h1 class="entry-title"><?php esc_html_e( 'Not Found', 'starchenkov-dev' ); ?></h1>

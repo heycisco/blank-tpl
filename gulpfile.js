@@ -57,8 +57,9 @@ let { src, dest } = require('gulp'),
 uglify = require("gulp-uglify-es").default,
 	imagemin = require("gulp-imagemin"),
 	replace = require('gulp-replace'),
-	webp = require("gulp-webp");
-// webphtml = require ("gulp-webp-html");
+	webp = require("gulp-webp"),
+	removeHtmlComments = require("gulp-remove-html-comments"),
+	webphtml = require ("gulp-webp-html");
 
 
 
@@ -76,6 +77,7 @@ function browserSync(params) {
 function html() {
 	return src(path.src.html)
 		.pipe(fileinclude())
+		.pipe(removeHtmlComments())
 		// .pipe(webphtml())
 		.pipe(dest(path.build.html))
 		.pipe(browsersync.stream());
@@ -174,7 +176,9 @@ function fonts() {
 
 function wordpress() {
 
-	src(path.wp.php).pipe(dest(wp_folder));
+	src(path.wp.php)
+	.pipe(removeHtmlComments())
+	.pipe(dest(wp_folder));
 
 	src(path.wp.css)
 		.pipe(

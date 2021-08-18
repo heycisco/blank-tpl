@@ -9,6 +9,6 @@
 <header class="main-header" role="banner">
 <?php get_template_part( 'inc/branding' ); ?>
 <?php get_template_part( 'inc/menu-main' ); ?>
-<?php get_template_part( 'inc/searchform' ); ?>
+<?php get_search_form(); ?>
 </header>
 <div class="main-block wrapper">

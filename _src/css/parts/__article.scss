@@ -1,4 +1,8 @@
 .single {
+	padding: 0 var(--grid-sides);
+	>* {
+		padding: var(--content-indents) 0;
+	}
 	&__article {
 		&__header {}
 
@@ -8,22 +12,6 @@
 	}
 
 	.footer {
-		.post-navigation {
-			.nav-links {
-				position: relative;
 
-				.nav-next,
-				.nav-previous {
-					position: absolute;
-					top: 0;
-					left: 0;
-				}
-
-				.nav-next {
-					right: 0;
-					left: unset;
-				}
-			}
-		}
 	}
 }

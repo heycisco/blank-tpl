@@ -1,11 +1,18 @@
 .category {
-	&__header {
-		
-	}
+	&__header {}
+
 	&__posts {
 		&__article {
+			border: 1px solid var(--color-text);
+			margin: var(--grid-gutter) 0;
+
 			&.wrapper {
 				position: relative;
+
+				>* {
+					padding: var(--grid-gutter);
+					margin: 0;
+				}
 
 				a {
 					width: 100%;
@@ -14,24 +21,11 @@
 					position: absolute;
 					border-bottom: none;
 				}
-			}
-		}
-	}
 
-	.posts-navigation {
-		.nav-links {
-			position: relative;
+				img {
+					padding: 0;
 
-			.nav-next,
-			.nav-previous {
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-
-			.nav-next {
-				right: 0;
-				left: unset;
+				}
 			}
 		}
 	}

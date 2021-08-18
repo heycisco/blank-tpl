@@ -8,10 +8,13 @@
 @import "defs/__defs.scss";
 
 .heycisco-proj { // <= Оборачиваем стили в класс body
-	@import "components/__header.scss";
-	@import "components/__footer.scss";
-	@import "components/__menu.scss";
-	@import "__styles.scss";
+	@import "__header.scss";
+	@import "__footer.scss";
+	@import "components/__menu-main.scss";
+	@import "components/__search.scss";
+	@import "components/__post-category-nav.scss";
+	@import "components/__searchform.scss";
+	@import "components/__comments.scss";
 
 	.main-block {
 		@import "parts/__page.scss";
@@ -20,4 +23,6 @@
 		@import "parts/__home.scss";
 		@import "parts/__404.scss";
 	}
+
+	@import "__styles.scss";
 }

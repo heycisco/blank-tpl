@@ -120,6 +120,16 @@
 
 </div>
 <footer class="main-footer">
+	<nav class="main-footer__menu" role="navigation">
+	<div class="menu-secondary-menu-container">
+		<ul id="menu-secondary-menu" class="menu">
+			<li id="menu-item-2043" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-2043"><a href="http://dev.starchenkov.pro/">Aut porro et tempora</a></li>
+			<li id="menu-item-2041" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2041"><a href="http://dev.starchenkov.pro/no-category/">Без рубрики</a></li>
+			<li id="menu-item-2042" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2042"><a href="http://dev.starchenkov.pro/standart/">Стандарт</a></li>
+		</ul>
+	</div>
+</nav>
+
 	<div class="main-footer__copyright">
 © 2021 Starchenkov Dev</div>
 </footer>
@@ -129,8 +139,6 @@
 .show-grid::before {
 	--grid-color: #ff00001c;
 }
-
-
 #grid-btn {
 	position: fixed;
 	right: 12px;
@@ -142,22 +150,18 @@
 	cursor: pointer;
 	user-select: none;
 }
-
 #grid-btn:hover {
 	background: #red;
 }
-
 .show-grid .main-header {
 	background: #0000001f;
 }
-
 .show-grid .main-footer {
 	background: #0000001f;
 }
 .show-grid section>* {
 	background: #0000001f;
 }
-
 .show-grid:before {
 	position: fixed;
 	max-width: var(--page-width);
@@ -180,18 +184,10 @@
 		transparent calc(var(--grid-column-width) + var(--grid-gutter)));
 	background-repeat: no-repeat;
 }
-
 </style>
-
-
-
-
 <script>
 	const bodyGrid = document.querySelector("body.main-body");
-
-	function showGrid(){
-		bodyGrid.classList.toggle("show-grid");
-	}
+	function showGrid(){bodyGrid.classList.toggle("show-grid")}
 </script>
 <div id="grid-btn" onclick="showGrid()">GRID</div>
 

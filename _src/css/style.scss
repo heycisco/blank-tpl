@@ -14,8 +14,10 @@
 	@import "__styles.scss";
 
 	.main-block {
-		@import "parts/__homepage.scss";
+		@import "parts/__page.scss";
 		@import "parts/__category.scss";
 		@import "parts/__article.scss";
+		@import "parts/__home.scss";
+		@import "parts/__404.scss";
 	}
 }

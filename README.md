@@ -38,19 +38,19 @@ gulp
 ```shell
 ROOT
 |
-|   .gitignore <!--- and here -->
-|   gulpfile.js // Тут настройки компилятора
-|   package.json [comment]: <> (This is a comment, it will not be included)
-|   README.md [//]: <> (This is also a comment.)
-|   wp-replace.json [//]: # (This may be the most platform independent comment)
+|   .gitignore
+|   gulpfile.js # Основные параметры компилятора
+|   package.json # Информация о проекте и установленные плагины
+|   README.md
+|   wp-replace.json # Автозамены для wordpress
 |   
 +---dist
 |   |   404.html
-|   |   category.html <тест тест>
-|   |   favicon.ico *test more*
-|   |   index.html **one more**
-|   |   page.html $test 22
-|   |   search.html $test 22$
+|   |   category.html
+|   |   favicon.ico
+|   |   index.html
+|   |   page.html
+|   |   search.html
 |   |   single-post.html
 |   |   
 |   +---css

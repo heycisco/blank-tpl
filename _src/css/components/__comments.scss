@@ -1,0 +1,26 @@
+.comments {
+	.comments-list {
+		>ul {
+			>li {
+				margin: var(--grid-gutter) 0;
+
+				article {
+					background: #fff;
+					padding: var(--grid-gutter);
+					ol li {
+						list-style-type: decimal;
+					}
+				}
+			}
+		}
+	}
+
+	.comment-respond {
+		margin-top: var(--content-indents);
+
+		.comment-form-comment {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}

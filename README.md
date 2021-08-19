@@ -35,7 +35,7 @@ gulp
 ## Стуктура файлов
 
 
-```doc
+```js
 ROOT
 |
 |   .gitignore <!--- and here -->

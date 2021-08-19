@@ -28,8 +28,10 @@ $categories = get_categories(array(
 
 foreach( $categories as $category ){
 
-$image_id = get_term_meta( $category->term_id );
-$image_url = wp_get_attachment_image_url( $image_id, 'thumbnail', 1 );
+
+
+$image_id = get_term_meta( $category->term_id, '_thumbnail_id', 1 );
+$image_url = wp_get_attachment_image_url( $image_id, 'thumbnail' );
 
 
 echo '<img src="' . $image_url . '">';

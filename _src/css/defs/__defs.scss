@@ -49,21 +49,4 @@
 			}
 		}
 	}
-
-	.content {
-		line-height: 1.6;
-		p {
-			margin-bottom: 0.85em;
-		}
-		a {
-			border-bottom: 1px solid var(--color-text);
-
-		}
-		ul {
-				li {
-				list-style: disc;
-				list-style-position: inside;
-			}
-		}
-	}
 }

@@ -51,22 +51,14 @@ input::-ms-clear {
   display: none;
 }
 
-button, a {
+button,
+a {
   cursor: pointer;
 }
 
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
-}
-
-a,
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
 }
 
 ul li {
@@ -78,9 +70,20 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus, a:hover, a:active, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 :root {
   --color-text: #333;
   --color-bg: #eee;
+  --color-link: #147cb8;
   --c: 1;
   --page-width: unset;
   --content-indents: calc(48px * var(--c));
@@ -154,23 +157,6 @@ img {
   padding: var(--content-indents) var(--grid-sides);
 }
 
-.heycisco-proj .content {
-  line-height: 1.6;
-}
-
-.heycisco-proj .content p {
-  margin-bottom: 0.85em;
-}
-
-.heycisco-proj .content a {
-  border-bottom: 1px solid var(--color-text);
-}
-
-.heycisco-proj .content ul li {
-  list-style: disc;
-  list-style-position: inside;
-}
-
 ::-webkit-scrollbar {
   width: 0.5em;
 }
@@ -183,17 +169,17 @@ img {
   background: rgba(0, 0, 0, 0.3);
 }
 
-button, .wp-block-button a {
+button, .wp-block-button a, #searchsubmit {
   border: 1px solid var(--color-text);
   padding: 0 3px;
+  font-size: 1rem;
+  color: var(--color-text);
+  font-weight: 400;
+  cursor: pointer;
 }
 
 .heycisco-proj .main-header {
   justify-content: space-between;
-}
-
-.heycisco-proj .main-header__branding__title a:focus, .heycisco-proj .main-header__branding__title a:hover, .heycisco-proj .main-header__branding__title a:active, .heycisco-proj .main-header__branding__title a:visited {
-  color: inherit;
 }
 
 .heycisco-proj .main-header__search {
@@ -292,9 +278,10 @@ button, .wp-block-button a {
 
 .heycisco-proj .search-form #searchsubmit {
   margin-left: 4px;
-  cursor: pointer;
-  padding: 0 4px;
-  border: 1px solid var(--color-text);
+}
+
+.heycisco-proj .main-block main article {
+  line-height: 1.6;
 }
 
 .heycisco-proj .main-block main article ol li {
@@ -302,7 +289,16 @@ button, .wp-block-button a {
 }
 
 .heycisco-proj .main-block main article a {
-  color: #f00;
+  color: var(--color-link);
+}
+
+.heycisco-proj .main-block main article p {
+  margin-bottom: 0.85em;
+}
+
+.heycisco-proj .main-block main article ul li {
+  list-style: disc;
+  list-style-position: inside;
 }
 
 .heycisco-proj .main-block .category__posts__article {

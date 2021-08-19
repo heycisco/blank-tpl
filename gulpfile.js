@@ -77,7 +77,7 @@ function browserSync(params) {
 function html() {
 	return src(path.src.html)
 		.pipe(fileinclude())
-		.pipe(removeHtmlComments())
+		// .pipe(removeHtmlComments())
 		// .pipe(webphtml())
 		.pipe(dest(path.build.html))
 		.pipe(browsersync.stream());
@@ -177,7 +177,7 @@ function fonts() {
 function wordpress() {
 
 	src(path.wp.php)
-	.pipe(removeHtmlComments())
+	// .pipe(removeHtmlComments())
 	.pipe(dest(wp_folder));
 
 	src(path.wp.css)

@@ -51,22 +51,14 @@ input::-ms-clear {
 	display: none;
 }
 
-button, a {
+button,
+a {
 	cursor: pointer;
 }
 
 button::-moz-focus-inner {
 	padding: 0;
 	border: 0;
-}
-
-a,
-a:visited {
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: none;
 }
 
 ul li {
@@ -76,4 +68,17 @@ ul li {
 img {
 	max-width: 100%;
 	height: auto;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+
+	&:focus,
+	&:hover,
+	&:active,
+	&:visited {
+		text-decoration: none;
+		color: inherit;
+	}
 }

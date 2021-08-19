@@ -35,7 +35,7 @@ gulp
 ## Стуктура файлов
 
 
-```xml
+```cmd
 ROOT
 |
 |   .gitignore <!--- and here -->

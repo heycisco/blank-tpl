@@ -35,7 +35,7 @@ gulp
 ## Стуктура файлов
 
 
-```
+```html
 ROOT
 |
 |   .gitignore <!--- and here -->

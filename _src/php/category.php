@@ -1,4 +1,19 @@
 <?php get_header(); ?>
+<?php
+
+// Миниатюры категорий
+// получаем ID термина на странице термина
+$term_id = get_queried_object_id();
+
+// получим ID картинки из метаполя термина
+$image_id = get_term_meta( $term_id, '_thumbnail_id', 1 );
+
+// ссылка на полный размер картинки по ID вложения
+$image_url = wp_get_attachment_image_url( $image_id, 'full' );
+
+?>
+
+
 <main class="main-block__category category">
 <header class="category__header">
 <h1 class="category__header__title"><?php single_term_title(); ?></h1>

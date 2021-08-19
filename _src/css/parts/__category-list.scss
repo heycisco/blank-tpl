@@ -1,12 +1,22 @@
 .category-list {
-	&__header {
-		color: red;
-	}
+	&__header {}
 
 	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+		justify-content: flex-start;
+
 		&__article {
 			border: 1px solid var(--color-text);
-			margin: var(--grid-gutter) 0;
+			line-height: 1.6;
+			flex: 1 1 30%;
+			margin-right: var(--grid-gutter);
+			margin-bottom: var(--grid-gutter);
+
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
 
 			&.wrapper {
 				position: relative;

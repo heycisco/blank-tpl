@@ -28,6 +28,10 @@
 
 				.image-wrapper {
 					object-fit: cover;
+					object-position: 50% 50%;
+					overflow: hidden;
+					padding: 0;
+					max-height: 50%;
 
 					img {
 						width: 100%;

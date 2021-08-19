@@ -308,6 +308,10 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
 
 .heycisco-proj .main-block .category__posts__article.wrapper .image-wrapper {
   object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+  padding: 0;
+  max-height: 50%;
 }
 
 .heycisco-proj .main-block .category__posts__article.wrapper .image-wrapper img {
@@ -323,6 +327,9 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
 }
 
 .heycisco-proj .main-block .category-list__content__article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 1px solid var(--color-text);
   line-height: 1.6;
   width: calc(50% - (var(--grid-gutter) / 2));
@@ -349,15 +356,6 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
   display: block;
   position: absolute;
   border-bottom: none;
-}
-
-.heycisco-proj .main-block .category-list__content__article.wrapper .image-wrapper {
-  object-fit: cover;
-}
-
-.heycisco-proj .main-block .category-list__content__article.wrapper .image-wrapper img {
-  width: 100%;
-  height: 100%;
 }
 
 .heycisco-proj .main-block .single {

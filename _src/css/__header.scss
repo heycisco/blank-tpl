@@ -2,8 +2,14 @@
 	justify-content: space-between;
 
 	&__branding {
+		display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 		&__title {
 
+		}
+		&__description {
+			margin-top: var(--grid-gutter);
 		}
 	}
 

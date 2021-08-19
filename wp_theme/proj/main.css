@@ -182,6 +182,16 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
   justify-content: space-between;
 }
 
+.heycisco-proj .main-header__branding {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heycisco-proj .main-header__branding__description {
+  margin-top: var(--grid-gutter);
+}
+
 .heycisco-proj .main-header__search {
   display: flex;
   align-items: center;
@@ -284,6 +294,8 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-height: 180px;
+  overflow: hidden;
 }
 
 .heycisco-proj .main-block .category__posts__article {

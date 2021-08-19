@@ -15,30 +15,23 @@ Template Name: Вывод категорий постов
 	<section class="category-list__content">
 
 <?php
+// Настройка вывода категорий
 $categories = get_categories(array(
 	'orderby' => 'name',
 	'order' => 'ASC'
 ));
-
-
-
-// $meta_key = '_thumbnail_id';
-// $attach_term_meta_key = 'img_term';
-
-
 foreach( $categories as $category ){
-
-
-
 $image_id = get_term_meta( $category->term_id, '_thumbnail_id', 1 );
+// Размер миниатюр
 $image_url = wp_get_attachment_image_url( $image_id, 'thumbnail' );
 
-
-echo '<img src="' . $image_url . '">';
-
-echo '<p>Category: <a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </p> ';
-	echo '<p> Description:'. $category->description . '</p>';
-	echo '<p> Post Count: '. $category->count . '</p>';
+echo '<article class="category-list__content_article wrapper">';
+echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "Перейти в категорию %s" ), $category->name ) . '" ' . '></a>';
+echo '<div class="category-image"><img src="' . $image_url . '"></div>';
+echo '<h3 class="title">' . $category->name.'</h3>';
+	echo '<div class="description">'. $category->description . '</div>';
+	echo '<div class="post-counter">Записей: <span>'. $category->count . '</span></div></div>';
+	echo '</div>';
 }
 ?>
 

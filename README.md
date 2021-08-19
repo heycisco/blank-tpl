@@ -46,7 +46,7 @@ ROOT
 |   
 +---dist
 |   |   404.html
-|   |   category.html
+|   |   category.html <тест тест>
 |   |   favicon.ico
 |   |   index.html
 |   |   page.html

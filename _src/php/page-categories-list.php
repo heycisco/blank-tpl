@@ -27,7 +27,12 @@ $image_url = wp_get_attachment_image_url( $image_id, 'thumbnail' );
 
 echo '<article class="category-list__content__article wrapper">';
 echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "Перейти в категорию %s" ), $category->name ) . '" ' . '></a>';
-echo '<div class="category-image"><img src="' . $image_url . '"></div>';
+if ( $image_url ) {
+	echo '<div class="category-image"><img src="' . $image_url . '"></div>';
+} else {
+// Если нет картинки
+	echo '<div class="category-image"><img src="' . get_template_directory_uri() . 'img/no-img.png"></div>';
+}
 echo '<h3 class="title">' . $category->name.'</h3>';
 	echo '<div class="description">'. $category->description . '</div>';
 	echo '<div class="post-counter">Записей: <span>'. $category->count . '</span></div>';

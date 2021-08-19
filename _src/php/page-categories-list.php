@@ -23,15 +23,15 @@ $categories = get_categories(array(
 foreach( $categories as $category ){
 $image_id = get_term_meta( $category->term_id, '_thumbnail_id', 1 );
 // Размер миниатюр
-$image_url = wp_get_attachment_image_url( $image_id, 'thumbnail' );
+$image_url = wp_get_attachment_image_url( $image_id, 'medium' );
 
 echo '<article class="category-list__content__article wrapper">';
 echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "Перейти в категорию %s" ), $category->name ) . '" ' . '></a>';
 if ( $image_url ) {
-	echo '<div class="category-image"><img src="' . $image_url . '"></div>';
+	echo '<div class="image-wrapper"><img src="' . $image_url . '"></div>';
 } else {
 // Если нет картинки
-	echo '<div class="category-image"><img src="' . get_template_directory_uri() . '/images/placeholders/48x48.jpg"></div>';
+	echo '<div class="image-wrapper"><img src="' . get_template_directory_uri() . '/images/placeholders/48x48.jpg"></div>';
 }
 echo '<h3 class="title">' . $category->name.'</h3>';
 if ( $category->description ) {

@@ -302,8 +302,17 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
   border-bottom: none;
 }
 
-.heycisco-proj .main-block .category__posts__article.wrapper img {
+.heycisco-proj .main-block .category__posts__article.wrapper > img {
   padding: 0;
+}
+
+.heycisco-proj .main-block .category__posts__article.wrapper .image-wrapper {
+  object-fit: cover;
+}
+
+.heycisco-proj .main-block .category__posts__article.wrapper .image-wrapper img {
+  width: 100%;
+  height: 100%;
 }
 
 .heycisco-proj .main-block .category-list__content {
@@ -342,8 +351,13 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
   border-bottom: none;
 }
 
-.heycisco-proj .main-block .category-list__content__article.wrapper img {
-  padding: 0;
+.heycisco-proj .main-block .category-list__content__article.wrapper .image-wrapper {
+  object-fit: cover;
+}
+
+.heycisco-proj .main-block .category-list__content__article.wrapper .image-wrapper img {
+  width: 100%;
+  height: 100%;
 }
 
 .heycisco-proj .main-block .single {

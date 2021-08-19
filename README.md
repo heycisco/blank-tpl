@@ -35,7 +35,7 @@ gulp
 ## Стуктура файлов
 
 
-```console
+```shell
 ROOT
 |
 |   .gitignore <!--- and here -->
@@ -49,8 +49,8 @@ ROOT
 |   |   category.html <тест тест>
 |   |   favicon.ico *test more*
 |   |   index.html **one more**
-|   |   page.html 
-|   |   search.html
+|   |   page.html $test 22
+|   |   search.html $test 22$
 |   |   single-post.html
 |   |   
 |   +---css

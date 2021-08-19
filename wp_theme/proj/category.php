@@ -2,6 +2,9 @@
 <main class="main-block__category category">
 <header class="category__header">
 <h1 class="category__header__title"><?php single_term_title(); ?></h1>
+<div class="category__header__image">
+<?php echo '<img src="'. $image_url .'" alt="" />'; ?>
+</div>
 <div class="category__header__meta"><?php if ( '' != the_archive_description() ) { echo esc_html( the_archive_description() ); } ?></div>
 </header>
 

@@ -7,9 +7,11 @@ jQuery(function() {
 // действия:
 	preventDefault(); // отключаем кнопки
 
+
 	$(window).on('load', function() {
 // действия после загрузки:
 	console.log('loaded!');
+	showAbbrTitle(); // всплывающее окно
 
 	});
 

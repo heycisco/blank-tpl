@@ -25,4 +25,125 @@ main article {
 	pre {
 		white-space: normal;
 	}
+
+	h1 {
+		font-size: 2em;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 0.85em;
+	}
+
+	.header {
+		border-bottom: 1px solid var(--color-text);
+		margin-bottom: 0.5em;
+	}
+
+	img {
+		&.alignright {
+			float: right;
+			margin-left: 1em;
+			margin-bottom: 0.5em;
+		}
+
+		&.alignleft {
+			float: left;
+			margin-right: 1em;
+			margin-bottom: 0.5em;
+		}
+
+		&.aligncenter {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	figure {
+		margin-bottom: 1em;
+		&.alignright {
+			float: right;
+			margin-left: 1em;
+		}
+
+		&.aligncenter {
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&.alignleft {
+			float: left;
+			margin-right: 1em;
+		}
+		figcaption {
+			font-size: 0.85em;
+		}
+	}
+	blockquote {
+		font-style: italic;
+		font-size: 1.1em;
+		position: relative;
+		padding-left: 1em;
+		color: var(--color-quote);
+		&:before {
+			content: "“";
+			position: absolute;
+			font-size: 2.4em;
+			left: 0;
+			top: -0.5em;
+			opacity: 0.5;
+			font-family: sans-serif;
+		}
+	}
+	cite {
+		font-style: italic;
+		font-size: 1.1em;
+		color: var(--color-quote);
+	}
+	table {
+		line-height: 1;
+		border: 1px solid;
+		border-collapse: collapse;
+		border-color: var(--color-table-borders);
+		tr {
+
+			th {
+				padding: 0.5em;
+				border-bottom: 1px solid;
+				border-right: 1px solid;
+				border-color: var(--color-table-borders);
+				background: var(--color-light);
+			}
+			td {
+				padding: 0.5em;
+				border-bottom: 1px solid;
+				border-right: 1px solid;
+				border-color: var(--color-table-borders);
+			}
+		}
+	}
+	dl {
+		dt {
+			font-weight: bold;
+			margin-top: 0.5em;
+		}
+		dd {
+
+		}
+	}
+	address {
+		line-height: 1.2;
+		margin-bottom: 0.5em;
+	}
+	abbr[title], acronym[title] {
+		text-decoration: none;
+		border-bottom: 1px dotted var(--color-link);
+		cursor: help;
+	}
 }

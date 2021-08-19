@@ -22,6 +22,7 @@ $categories = get_categories(array(
 	'orderby' => 'name',
 	'hide_empty' => 1,
 	'hierarchical' => 1,
+	'pad_counts' => true,
 	'order' => 'ASC'
 ));
 foreach( $categories as $category ){

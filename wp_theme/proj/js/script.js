@@ -7,16 +7,17 @@ function preventDefault() {
 	jQuery('button').on('click', function(event) {
 		event.preventDefault();
 	});
-}
-; // все функции
+}; // все функции
 	; // скрипты для меню
 
 // действия:
 	preventDefault(); // отключаем кнопки
 
+
 	jQuery(window).on('load', function() {
 // действия после загрузки:
 	console.log('loaded!');
+	showAbbrTitle(); // всплывающее окно
 
 	});
 

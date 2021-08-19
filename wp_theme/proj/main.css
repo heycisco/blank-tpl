@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -65,7 +66,7 @@ ul li {
   list-style: none;
 }
 
-img {
+img, figure {
   max-width: 100%;
   height: auto;
 }
@@ -83,7 +84,10 @@ a:focus, a:hover, a:active, a:visited {
 :root {
   --color-text: #333;
   --color-bg: #eee;
+  --color-light: #0000000d;
   --color-link: #147cb8;
+  --color-quote: #808080;
+  --color-table-borders: #00000033;
   --c: 1;
   --page-width: unset;
   --content-indents: calc(48px * var(--c));
@@ -315,6 +319,128 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
 
 .heycisco-proj .main-block main article pre {
   white-space: normal;
+}
+
+.heycisco-proj .main-block main article h1 {
+  font-size: 2em;
+}
+
+.heycisco-proj .main-block main article h1,
+.heycisco-proj .main-block main article h2,
+.heycisco-proj .main-block main article h3,
+.heycisco-proj .main-block main article h4,
+.heycisco-proj .main-block main article h5,
+.heycisco-proj .main-block main article h6 {
+  margin-top: 0.85em;
+}
+
+.heycisco-proj .main-block main article .header {
+  border-bottom: 1px solid var(--color-text);
+  margin-bottom: 0.5em;
+}
+
+.heycisco-proj .main-block main article img.alignright {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+
+.heycisco-proj .main-block main article img.alignleft {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+}
+
+.heycisco-proj .main-block main article img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heycisco-proj .main-block main article figure {
+  margin-bottom: 1em;
+}
+
+.heycisco-proj .main-block main article figure.alignright {
+  float: right;
+  margin-left: 1em;
+}
+
+.heycisco-proj .main-block main article figure.aligncenter {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heycisco-proj .main-block main article figure.alignleft {
+  float: left;
+  margin-right: 1em;
+}
+
+.heycisco-proj .main-block main article figure figcaption {
+  font-size: 0.85em;
+}
+
+.heycisco-proj .main-block main article blockquote {
+  font-style: italic;
+  font-size: 1.1em;
+  position: relative;
+  padding-left: 1em;
+  color: var(--color-quote);
+}
+
+.heycisco-proj .main-block main article blockquote:before {
+  content: "“";
+  position: absolute;
+  font-size: 2.4em;
+  left: 0;
+  top: -0.5em;
+  opacity: 0.5;
+  font-family: sans-serif;
+}
+
+.heycisco-proj .main-block main article cite {
+  font-style: italic;
+  font-size: 1.1em;
+  color: var(--color-quote);
+}
+
+.heycisco-proj .main-block main article table {
+  line-height: 1;
+  border: 1px solid;
+  border-collapse: collapse;
+  border-color: var(--color-table-borders);
+}
+
+.heycisco-proj .main-block main article table tr th {
+  padding: 0.5em;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-color: var(--color-table-borders);
+  background: var(--color-light);
+}
+
+.heycisco-proj .main-block main article table tr td {
+  padding: 0.5em;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-color: var(--color-table-borders);
+}
+
+.heycisco-proj .main-block main article dl dt {
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+
+.heycisco-proj .main-block main article address {
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+.heycisco-proj .main-block main article abbr[title], .heycisco-proj .main-block main article acronym[title] {
+  text-decoration: none;
+  border-bottom: 1px dotted var(--color-link);
+  cursor: help;
 }
 
 .heycisco-proj .main-block .category__header__image {

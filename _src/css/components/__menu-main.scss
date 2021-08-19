@@ -36,6 +36,15 @@
 					&:last-child {
 						margin-right: 0;
 					}
+
+					.sub-menu {
+						display: none;
+						background: #fff;
+					}
+
+					&:hover .sub-menu {
+						display: block;
+					}
 				}
 			}
 		}

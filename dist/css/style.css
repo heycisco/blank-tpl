@@ -256,6 +256,15 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
   margin-right: 0;
 }
 
+.heycisco-proj .main-header__menu .menu-main-menu-container ul.menu > li .sub-menu {
+  display: none;
+  background: #fff;
+}
+
+.heycisco-proj .main-header__menu .menu-main-menu-container ul.menu > li:hover .sub-menu {
+  display: block;
+}
+
 .heycisco-proj .search-form {
   display: flex;
   align-items: center;

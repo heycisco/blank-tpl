@@ -8,15 +8,20 @@ Template Name: Вывод категорий постов
 
 
 <?php
-// Настройки вывода категорий
 
+// Миниатюры категорий
+$term_id = get_queried_object_id();
+
+// Настройки вывода категорий
 $args = array(
   'orderby' => 'name', // сортируем по названиям
   'show_count' => 1, // показываем количество записей
   'pad_counts' => 1, // показываем количество записей у родителей
   'hierarchical' => 1, // древовидное представление
   'title_li' => '' // список без заголовка
-); ?>
+);
+
+?>
 
 
 
@@ -28,7 +33,7 @@ $args = array(
 
 	<section class="category-list__content">
 
-		<?php wp_list_categories( $args ); ?>
+		<?php wp_list_categories( $args, $term_id ); ?>
 
 	</section>
 

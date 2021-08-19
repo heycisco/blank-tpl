@@ -28,10 +28,11 @@ $categories = get_categories(array(
 
 foreach( $categories as $category ){
 
-$image_id = get_term_meta( $term_id, '_thumbnail_id' );
+$image_id = get_term_meta( $category->term_id );
 $image_url = wp_get_attachment_image_url( $image_id, 'thumbnail', 1 );
 
-echo '<img src="'. $image_url .'">';
+
+echo '<img src="' . $image_url . '">';
 
 echo '<p>Category: <a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </p> ';
 	echo '<p> Description:'. $category->description . '</p>';

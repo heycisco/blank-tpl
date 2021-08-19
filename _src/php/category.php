@@ -7,11 +7,6 @@ $image_id = get_term_meta( $term_id, '_thumbnail_id', 1 );
 $image_url = wp_get_attachment_image_url( $image_id, 'full' );
 ?>
 
-<?php if ( has_post_thumbnail() ) : ?>
-	<div class="category__header__image">
-		<?php echo '<img src="'. $image_url .'">'; ?>
-	</div>
-<?php endif; ?>
 
 
 <main class="main-block__category category">
@@ -20,12 +15,20 @@ $image_url = wp_get_attachment_image_url( $image_id, 'full' );
 		<?php single_term_title(); ?>
 	</h1>
 
+<?php if ( $image_url ) : ?>
+	<div class="category__header__image">
+		<?php echo '<img src="'. $image_url .'">'; ?>
+	</div>
+<?php endif; ?>
+
 
 <div class="category__header__meta">
+<?php if ( get_the_archive_description() ) : ?>
+	<div class="description">
+		<?php echo get_the_archive_description(); ?>
+	</div>
+<?php endif; ?></div>
 
-
-	<?php if ( '' != the_archive_description() ) { echo . '<div class="description">' . esc_html( the_archive_description() ); . '</div>' . } ?>
-</div>
 </header>
 
 <section class="category__posts content">

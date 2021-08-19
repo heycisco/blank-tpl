@@ -47,8 +47,8 @@ ROOT
 +---dist
 |   |   404.html
 |   |   category.html <тест тест>
-|   |   favicon.ico
-|   |   index.html
+|   |   favicon.ico *test more*
+|   |   index.html **one more**
 |   |   page.html
 |   |   search.html
 |   |   single-post.html

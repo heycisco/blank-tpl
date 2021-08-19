@@ -30,8 +30,8 @@ echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprin
 echo '<div class="category-image"><img src="' . $image_url . '"></div>';
 echo '<h3 class="title">' . $category->name.'</h3>';
 	echo '<div class="description">'. $category->description . '</div>';
-	echo '<div class="post-counter">Записей: <span>'. $category->count . '</span></div></div>';
-	echo '</div>';
+	echo '<div class="post-counter">Записей: <span>'. $category->count . '</span></div>';
+	echo '</article>';
 }
 ?>
 

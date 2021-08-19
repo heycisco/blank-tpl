@@ -21,10 +21,15 @@ $categories = get_categories(array(
 ));
 
 
+
+// $meta_key = '_thumbnail_id';
+// $attach_term_meta_key = 'img_term';
+
+
 foreach( $categories as $category ){
 
-$image_id = get_term_meta( $term_id, '_thumbnail_id', 1 );
-$image_url = wp_get_attachment_image_url( $image_id, 'full' );
+$image_id = get_term_meta( $term_id, 'img_term' );
+$image_url = wp_get_attachment_image_url( $image_id, 'thumbnail' );
 
 echo '<img src="'. $image_url .'">';
 

@@ -29,6 +29,8 @@
 	// Ограничение ширины контента
 	--content-width: calc(100% + var(--grid-gutter) - ((var(--grid-gutter)  + var(--grid-column-width)) * 2)); // Ширина контента -2 колонки
 	// --content-width: unset; // Нефиксированный размер контента
+	--aside-width: unset; // Ширина сайдбара
+
 
 // Адаптивность
 	@media (max-width: 1024px) {

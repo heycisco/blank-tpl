@@ -97,6 +97,7 @@ a:focus, a:hover, a:active, a:visited {
   --grid-column-width: calc((100vw - var(--grid-gutter) * var(--grid-columns)) / var(--grid-columns));
   --section-padding: var(--grid-gutter);
   --content-width: calc(100% + var(--grid-gutter) - ((var(--grid-gutter)  + var(--grid-column-width)) * 2));
+  --aside-width: unset;
 }
 
 @media (max-width: 1024px) {
@@ -145,6 +146,7 @@ a:focus, a:hover, a:active, a:visited {
 
 .heycisco-proj .main-sidebar {
   padding: var(--content-indents) var(--grid-gutter);
+  width: var(--aside-width);
 }
 
 .heycisco-proj .main-block {

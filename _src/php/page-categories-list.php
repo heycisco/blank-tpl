@@ -6,35 +6,6 @@ Template Name: Вывод категорий постов
 
 <?php get_header(); ?>
 
-
-<?php
-
-// Миниатюры категорий
-// получаем ID термина на странице термина
-$term_id = get_queried_object_id();
-
-// получим ID картинки из метаполя термина
-$image_id = get_term_meta( $term_id, '_thumbnail_id', 1 );
-
-// ссылка на полный размер картинки по ID вложения
-$image_url = wp_get_attachment_image_url( $image_id, 'full' );
-
-// выводим картинку на экран
-echo '<img src="'. $image_url .'" alt="" />';
-
-// Настройки вывода категорий
-$args = array(
-  'orderby' => 'name', // сортируем по названиям
-  'show_count' => 1, // показываем количество записей
-  'pad_counts' => 1, // показываем количество записей у родителей
-  'hierarchical' => 1, // древовидное представление
-  'title_li' => '' // список без заголовка
-);
-
-?>
-
-
-
 <main class="main-block__category-list category-list">
 
 	<header class="category-list__header">
@@ -43,7 +14,24 @@ $args = array(
 
 	<section class="category-list__content">
 
-		<?php wp_list_categories( $args, $image_url ); ?>
+<?php
+$categories = get_categories(array(
+	'orderby' => 'name',
+	'order' => 'ASC'
+));
+foreach( $categories as $category ){
+
+	$term_id = get_queried_object_id();
+	$image_id = get_term_meta( $term_id, '_thumbnail_id', 1 );
+	$image_url = wp_get_attachment_image_url( $image_id, 'full' );
+
+echo '<img src="'. $image_url .'">';
+
+echo '<p>Category: <a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a> </p> ';
+	echo '<p> Description:'. $category->description . '</p>';
+	echo '<p> Post Count: '. $category->count . '</p>';
+}
+?>
 
 	</section>
 

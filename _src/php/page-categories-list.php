@@ -18,6 +18,10 @@ Template Name: Вывод категорий постов
 // Настройка вывода категорий
 $categories = get_categories(array(
 	'orderby' => 'name',
+	'type' => 'post',
+	'orderby' => 'name',
+	'hide_empty' => 1,
+	'hierarchical' => 1,
 	'order' => 'ASC'
 ));
 foreach( $categories as $category ){

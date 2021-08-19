@@ -1,5 +1,11 @@
 .category {
-	&__header {}
+	&__header {
+		&__image {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
 
 	&__posts {
 		&__article {
@@ -14,7 +20,7 @@
 					margin: 0;
 				}
 
-				> a {
+				>a {
 					width: 100%;
 					height: 100%;
 					display: block;

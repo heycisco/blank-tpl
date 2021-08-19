@@ -280,6 +280,12 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
   list-style-position: inside;
 }
 
+.heycisco-proj .main-block .category__header__image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .heycisco-proj .main-block .category__posts__article {
   border: 1px solid var(--color-text);
   margin: var(--grid-gutter) 0;

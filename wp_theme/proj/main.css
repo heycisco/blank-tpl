@@ -316,7 +316,7 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
 .heycisco-proj .main-block .category-list__content__article {
   border: 1px solid var(--color-text);
   line-height: 1.6;
-  flex: 0 0 calc(50% - (var(--grid-gutter / 2)));
+  width: calc(50% - (var(--grid-gutter) / 2));
   margin-right: var(--grid-gutter);
   margin-bottom: var(--grid-gutter);
 }

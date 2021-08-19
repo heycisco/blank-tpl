@@ -10,11 +10,11 @@
 		&__article {
 			border: 1px solid var(--color-text);
 			line-height: 1.6;
-			flex: 0 0 calc(100% / 3 - (var(--grid-gutter) * 2));
+			flex: 0 0 calc(100% / 2 - (var(--grid-gutter) * 1));
 			margin-right: var(--grid-gutter);
 			margin-bottom: var(--grid-gutter);
 
-			&:nth-child(3n) {
+			&:nth-child(2n) {
 				margin-right: 0;
 			}
 

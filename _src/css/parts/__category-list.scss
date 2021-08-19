@@ -1,0 +1,32 @@
+.category-list {
+	&__header {}
+
+	&__content {
+		&__article {
+			border: 1px solid var(--color-text);
+			margin: var(--grid-gutter) 0;
+
+			&.wrapper {
+				position: relative;
+
+				>* {
+					padding: var(--grid-gutter);
+					margin: 0;
+				}
+
+				a {
+					width: 100%;
+					height: 100%;
+					display: block;
+					position: absolute;
+					border-bottom: none;
+				}
+
+				img {
+					padding: 0;
+
+				}
+			}
+		}
+	}
+}

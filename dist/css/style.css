@@ -294,7 +294,7 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
   margin: 0;
 }
 
-.heycisco-proj .main-block .category__posts__article.wrapper a {
+.heycisco-proj .main-block .category__posts__article.wrapper > a {
   width: 100%;
   height: 100%;
   display: block;
@@ -356,6 +356,19 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
   display: block;
   position: absolute;
   border-bottom: none;
+}
+
+.heycisco-proj .main-block .category-list__content__article.wrapper .image-wrapper {
+  object-fit: cover;
+  object-position: 50% 50%;
+  overflow: hidden;
+  padding: 0;
+  max-height: 50%;
+}
+
+.heycisco-proj .main-block .category-list__content__article.wrapper .image-wrapper img {
+  width: 100%;
+  height: 100%;
 }
 
 .heycisco-proj .main-block .single {

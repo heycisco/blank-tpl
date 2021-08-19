@@ -246,6 +246,7 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
 .heycisco-proj .main-header__menu .menu-main-menu-container ul.menu > li {
   flex: 0 0 auto;
   margin-right: 6px;
+  position: relative;
 }
 
 .heycisco-proj .main-header__menu .menu-main-menu-container ul.menu > li a {
@@ -258,7 +259,20 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
 
 .heycisco-proj .main-header__menu .menu-main-menu-container ul.menu > li .sub-menu {
   display: none;
+  position: absolute;
+  padding: 0.35em;
+  left: -0.35em;
+  min-width: 160px;
+}
+
+.heycisco-proj .main-header__menu .menu-main-menu-container ul.menu > li .sub-menu li {
   background: #fff;
+}
+
+.heycisco-proj .main-header__menu .menu-main-menu-container ul.menu > li .sub-menu li a {
+  display: block;
+  padding: 0.35em;
+  width: 100%;
 }
 
 .heycisco-proj .main-header__menu .menu-main-menu-container ul.menu > li:hover .sub-menu {
@@ -297,6 +311,10 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
 .heycisco-proj .main-block main article ul li {
   list-style: disc;
   list-style-position: inside;
+}
+
+.heycisco-proj .main-block main article pre {
+  white-space: normal;
 }
 
 .heycisco-proj .main-block .category__header__image {

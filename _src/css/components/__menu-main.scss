@@ -28,6 +28,7 @@
 				>li {
 					flex: 0 0 auto;
 					margin-right: 6px;
+					position: relative;
 
 					a {
 						text-transform: uppercase;
@@ -39,7 +40,19 @@
 
 					.sub-menu {
 						display: none;
-						background: #fff;
+						position: absolute;
+						padding: 0.35em;
+						left: -0.35em;
+						min-width: 160px;
+
+						li {
+							background: #fff;
+							a {
+								display: block;
+								padding: 0.35em;
+								width: 100%;
+							}
+						}
 					}
 
 					&:hover .sub-menu {

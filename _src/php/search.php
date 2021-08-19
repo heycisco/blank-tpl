@@ -4,6 +4,7 @@
 <header class="header">
 <h1 class="entry-title"><?php printf( esc_html__( 'Search Results for: %s', 'starchenkov-dev' ), get_search_query() ); ?></h1>
 </header>
+<section>
 <?php while ( have_posts() ) : the_post(); ?>
 <?php get_template_part( 'entry' ); ?>
 <?php endwhile; ?>
@@ -18,6 +19,7 @@
 <?php get_search_form(); ?>
 </div>
 </article>
+</section>
 <?php endif; ?>
 </main>
 <?php get_sidebar(); ?>

@@ -306,6 +306,10 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
   padding: 0;
 }
 
+.heycisco-proj .main-block .category-list__header {
+  color: red;
+}
+
 .heycisco-proj .main-block .category-list__content__article {
   border: 1px solid var(--color-text);
   margin: var(--grid-gutter) 0;

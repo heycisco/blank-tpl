@@ -19,11 +19,12 @@ $categories = get_categories(array(
 	'orderby' => 'name',
 	'order' => 'ASC'
 ));
-$term_id = get_queried_object_id();
-	$image_id = get_term_meta( $term_id, '_thumbnail_id', 1 );
-	$image_url = wp_get_attachment_image_url( $image_id, 'full' );
+
 
 foreach( $categories as $category ){
+
+$image_id = get_term_meta( $term_id, '_thumbnail_id', 1 );
+$image_url = wp_get_attachment_image_url( $image_id, 'full' );
 
 echo '<img src="'. $image_url .'">';
 

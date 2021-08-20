@@ -8,6 +8,12 @@
 npm i
 ```
 
+Установить gulp
+
+```sh
+npm i gulp-cli
+```
+
 Запустить gulp
 
 ```sh

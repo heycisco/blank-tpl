@@ -2,7 +2,7 @@ let package = require('./package');
 let wpc = require('./wp-replace');
 let project_name = package['name'];
 let project_folder = "dist";
-let source_folder = "_src";
+let source_folder = "src";
 let wp_folder = "wp_theme/" + project_name;
 
 let path = {
@@ -54,12 +54,12 @@ let { src, dest } = require('gulp'),
 	clean_css = require("gulp-clean-css"),
 	rename = require("gulp-rename"),
 	replace = require("gulp-replace");
-	uglify = require("gulp-uglify-es").default,
+uglify = require("gulp-uglify-es").default,
 	imagemin = require("gulp-imagemin"),
 	replace = require('gulp-replace'),
 	webp = require("gulp-webp"),
 	removeHtmlComments = require("gulp-remove-html-comments"),
-	webphtml = require ("gulp-webp-html");
+	webphtml = require("gulp-webp-html");
 
 
 
@@ -177,8 +177,8 @@ function fonts() {
 function wordpress() {
 
 	src(path.wp.php)
-	// .pipe(removeHtmlComments())
-	.pipe(dest(wp_folder));
+		// .pipe(removeHtmlComments())
+		.pipe(dest(wp_folder));
 
 	src(path.wp.css)
 		.pipe(

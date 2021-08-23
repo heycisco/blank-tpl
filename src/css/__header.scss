@@ -3,16 +3,14 @@
 
 	&__branding {
 		display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+		flex-direction: column;
+		justify-content: space-between;
 		&__title {
-
 		}
 		&__description {
 			margin-top: var(--grid-gutter);
 		}
 	}
-
 	&__search {
 		display: flex;
 		align-items: center;

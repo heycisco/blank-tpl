@@ -10,7 +10,8 @@
 // Глобальные эффекты
 @import "__global-effects.scss";
 
-.heycisco-proj { // <= Оборачиваем стили в класс body
+.heycisco-proj {
+	// <= Оборачиваем стили в класс body
 	@import "__header.scss";
 	@import "__footer.scss";
 	@import "components/__menu-main.scss";

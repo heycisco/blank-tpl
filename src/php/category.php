@@ -13,7 +13,7 @@
 	$image_url = wp_get_attachment_image_url( $image_id, 'full' );
 	if ( $image_url ) : ?>
 	<div class="category__header__image">
-	<?php echo '<img src="'. $image_url .'">'; ?>
+		<?php echo '<img src="'. $image_url .'">'; ?>
 	</div>
 	<?php endif; ?>
 

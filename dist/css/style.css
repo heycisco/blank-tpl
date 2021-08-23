@@ -175,7 +175,10 @@ a:focus, a:hover, a:active, a:visited {
   background: rgba(0, 0, 0, 0.3);
 }
 
-button, .wp-block-button a, #searchsubmit, .form-submit .submit {
+button,
+.wp-block-button a,
+#searchsubmit,
+.form-submit .submit {
   border: 1px solid var(--color-text);
   padding: 0 3px;
   font-size: 1rem;
@@ -439,7 +442,8 @@ button, .wp-block-button a, #searchsubmit, .form-submit .submit {
   margin-bottom: 0.5em;
 }
 
-.heycisco-proj .main-block main article abbr[title], .heycisco-proj .main-block main article acronym[title] {
+.heycisco-proj .main-block main article abbr[title],
+.heycisco-proj .main-block main article acronym[title] {
   text-decoration: none;
   border-bottom: 1px dotted var(--color-link);
   cursor: help;

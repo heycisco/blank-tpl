@@ -1,14 +1,8 @@
 // jqs = jQuery.noConflict();
 jQuery(function () {
-	; // тут переменные
-	// Отключение действий при нажатии на кнопки
-function preventDefault() {
-	$("button").on("click", function (event) {
-		event.preventDefault();
-	});
-}
-; // все функции
-	; // скрипты для меню
+	@@include('__const.js'); // тут переменные
+	@@include('__functions.js'); // все функции
+	@@include('components/__menu.js'); // скрипты для меню
 
 	// действия:
 	preventDefault(); // отключаем кнопки

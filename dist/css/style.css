@@ -467,6 +467,19 @@ button,
   margin-top: 0.25em;
 }
 
+.heycisco-proj .main-block main article .wp-block-button__link {
+  display: inline-block;
+  text-align: center;
+}
+
+.heycisco-proj .main-block main article .wp-block-button.aligncenter {
+  text-align: center;
+}
+
+.heycisco-proj .main-block main article .wp-block-button.alignright {
+  text-align: right;
+}
+
 .heycisco-proj .main-block .category__header__image {
   display: flex;
   flex-direction: column;

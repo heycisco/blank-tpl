@@ -139,4 +139,16 @@ main article {
 		font-size: 0.85em;
 		margin-top: 0.25em;
 	}
+	.wp-block-button__link {
+		display: inline-block;
+		text-align: center;
+	}
+	.wp-block-button {
+		&.aligncenter {
+			text-align: center;
+		}
+		&.alignright {
+			text-align: right;
+		}
+	}
 }

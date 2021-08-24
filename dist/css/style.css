@@ -480,6 +480,26 @@ button,
   text-align: right;
 }
 
+.heycisco-proj .main-block main article video {
+  max-width: 100%;
+}
+
+.heycisco-proj .main-block main article .blocks-gallery-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.heycisco-proj .main-block main article .blocks-gallery-grid .blocks-gallery-item {
+  list-style: none;
+  flex: 1 1;
+  margin-right: 4px;
+}
+
+.heycisco-proj .main-block main article .blocks-gallery-grid .blocks-gallery-item:last-child {
+  margin-right: 0;
+}
+
 .heycisco-proj .main-block .category__header__image {
   display: flex;
   flex-direction: column;

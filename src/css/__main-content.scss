@@ -158,6 +158,7 @@ main article {
 		display: flex;
 		justify-content: space-between;
 		align-items: stretch;
+		flex-wrap: wrap;
 		.blocks-gallery-item {
 			list-style: none;
 			flex: 1 1;

@@ -488,6 +488,7 @@ button,
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  flex-wrap: wrap;
 }
 
 .heycisco-proj .main-block main article .blocks-gallery-grid .blocks-gallery-item {

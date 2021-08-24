@@ -1,18 +1,20 @@
 // Подключение локальных шрифтов
 @font-face {
-	font-family: 'OpenSans-Regular';
-	src: url('../fonts/OpenSans-Regular.eot');
-	src: url('../fonts/OpenSans-Regular.eot?iefix') format('eot'),
-		url('../fonts/OpenSans-Regular.woff') format('woff'),
-		url('../fonts/OpenSans-Regular.ttf') format('truetype');
+	font-family: "OpenSans-Regular";
+	src: url("../fonts/OpenSans-Regular.eot");
+	src: url("../fonts/OpenSans-Regular.eot?iefix") format("eot"),
+		url("../fonts/OpenSans-Regular.woff") format("woff"),
+		url("../fonts/OpenSans-Regular.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
-
-
+@mixin font-regular {
+	font-weight: 400;
+}
 
 // Глобальные стили
-.heycisco-proj { // <= Класс у body
+.heycisco-proj {
+	// <= Класс у body
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
@@ -42,11 +44,11 @@
 		align-content: flex-start;
 		line-height: 1.5;
 		font-size: 16px;
-		main { // <= Общий для всех видов контента блок
+		main {
+			// <= Общий для всех видов контента блок
 			width: 100%;
 			padding: var(--content-indents) var(--grid-sides);
-		&.wrapper {
-
+			&.wrapper {
 			}
 		}
 	}

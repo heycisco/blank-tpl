@@ -116,7 +116,7 @@ a:focus, a:hover, a:active, a:visited {
 }
 
 @font-face {
-  font-family: 'OpenSans-Regular';
+  font-family: "OpenSans-Regular";
   src: url("../fonts/OpenSans-Regular.eot");
   src: url("../fonts/OpenSans-Regular.eot?iefix") format("eot"), url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: normal;
@@ -175,16 +175,29 @@ a:focus, a:hover, a:active, a:visited {
   background: rgba(0, 0, 0, 0.3);
 }
 
+input,
 button,
 .wp-block-button a,
 #searchsubmit,
-.form-submit .submit {
+.form-submit .submit,
+.search-submit {
   border: 1px solid var(--color-text);
   padding: 0 3px;
   font-size: 1rem;
   color: var(--color-text);
   font-weight: 400;
+}
+
+button,
+.wp-block-button a,
+#searchsubmit,
+.form-submit .submit,
+.search-submit {
   cursor: pointer;
+}
+
+.search-submit {
+  margin-left: 4px;
 }
 
 .heycisco-proj .main-header {
@@ -293,16 +306,13 @@ button,
   align-items: center;
 }
 
-.heycisco-proj .search-form #s {
-  padding: 1px 0;
-}
-
 .heycisco-proj .search-form #searchsubmit {
   margin-left: 4px;
 }
 
 .heycisco-proj .main-block main article {
   line-height: 1.6;
+  font-weight: 400;
 }
 
 .heycisco-proj .main-block main article ol li {
@@ -447,6 +457,14 @@ button,
   text-decoration: none;
   border-bottom: 1px dotted var(--color-link);
   cursor: help;
+}
+
+.heycisco-proj .main-block main article code {
+  background: var(--color-light);
+  display: block;
+  padding: 3px 6px;
+  font-size: 0.85em;
+  margin-top: 0.25em;
 }
 
 .heycisco-proj .main-block .category__header__image {

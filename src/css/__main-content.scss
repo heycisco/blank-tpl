@@ -1,5 +1,6 @@
 main article {
 	line-height: 1.6;
+	@include font-regular;
 	ol {
 		li {
 			margin-left: 1em;
@@ -130,5 +131,12 @@ main article {
 		text-decoration: none;
 		border-bottom: 1px dotted var(--color-link);
 		cursor: help;
+	}
+	code {
+		background: var(--color-light);
+		display: block;
+		padding: 3px 6px;
+		font-size: 0.85em;
+		margin-top: 0.25em;
 	}
 }

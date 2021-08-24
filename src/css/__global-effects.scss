@@ -9,15 +9,26 @@
 ::-webkit-scrollbar-thumb {
 	background: rgba(0, 0, 0, 0.3);
 }
-
+input,
 button,
 .wp-block-button a,
 #searchsubmit,
-.form-submit .submit {
+.form-submit .submit,
+.search-submit {
 	border: 1px solid var(--color-text);
 	padding: 0 3px;
 	font-size: 1rem;
 	color: var(--color-text);
 	font-weight: 400;
+}
+button,
+.wp-block-button a,
+#searchsubmit,
+.form-submit .submit,
+.search-submit {
 	cursor: pointer;
+}
+
+.search-submit {
+	margin-left: 4px;
 }

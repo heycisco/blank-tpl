@@ -208,7 +208,6 @@ button,
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: red;
 }
 
 .heycisco-proj .main-header__branding__description {

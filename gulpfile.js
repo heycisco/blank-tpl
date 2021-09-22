@@ -71,9 +71,7 @@ let { src, dest } = require("gulp"),
 	replace = require("gulp-replace"),
 	uglify = require("gulp-uglify-es").default,
 	imagemin = require("gulp-imagemin"),
-	webp = require("gulp-webp"),
-	removeHtmlComments = require("gulp-remove-html-comments"),
-	webphtml = require("gulp-webp-html");
+	removeHtmlComments = require("gulp-remove-html-comments");
 
 function browserSync(params) {
 	browsersync.init({
@@ -137,7 +135,6 @@ function final() {
 	src(path.src.html)
 	.pipe(fileinclude())
 	.pipe(removeHtmlComments())
-	// .pipe(webphtml())
 	.pipe(dest(path.build.html));
 
 	src(path.src.css)
@@ -164,12 +161,6 @@ function final() {
 	.pipe(dest(path.build.js));
 
 	return src(path.src.img)
-	// Преобразование картинок в webp
-	// .pipe (
-	// 	webp({
-	// 			quality: 70
-	// 		})
-	// 	)
 	.pipe(
 		imagemin({
 			interlaced: true,
@@ -182,11 +173,9 @@ function final() {
 }
 
 
-
 function wordpress() {
 	del(path.clean.wp);
 	src(path.wp.php)
-		// .pipe(removeHtmlComments())
 		.pipe(dest(wp_folder));
 
 	src(path.wp.css)
@@ -206,8 +195,7 @@ function wordpress() {
 		.pipe(dest(wp_folder + "/js/"));
 
 	src(path.wp.img).pipe(dest(wp_folder + "/images/"));
-	src(path.wp.fonts).pipe(dest(wp_folder + "/fonts/"));
-	return src(path.wp.php);
+	return src(path.wp.fonts).pipe(dest(wp_folder + "/fonts/"));
 }
 
 function watchFiles(params) {

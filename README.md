@@ -20,6 +20,18 @@ npm i gulp-cli
 gulp
 ```
 
+Финальная компиляция (сжатие css, js и т.п.)
+
+```sh
+gulp final
+```
+
+Собрать тему для wordpress
+
+```sh
+gulp wordpress
+```
+
 ## Особености
 
 Исходники находятся в: **\_src**

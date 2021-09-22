@@ -89,8 +89,6 @@ function html() {
 	return (
 		src(path.src.html)
 			.pipe(fileinclude())
-			// .pipe(removeHtmlComments())
-			// .pipe(webphtml())
 			.pipe(dest(path.build.html))
 			.pipe(browsersync.stream())
 	);
@@ -108,27 +106,6 @@ function css() {
 					outputStyle: "expanded",
 				})
 			)
-
-			// Группировка медиазапросов:
-			// .pipe(group_media())
-
-			// Добавление браузерных префиксов
-			// .pipe(
-			// 	autoprefixer({
-			// 		overrideBrowserslist: ["last 5 versions"],
-			// 		cascade: true
-			// 	})
-			// )
-			// .pipe(dest(path.build.css))
-
-			// Сжатие CSS
-			// .pipe(clean_css())
-
-			.pipe(
-				rename({
-					extname: ".css",
-				})
-			)
 			.pipe(dest(path.build.css))
 			.pipe(browsersync.stream())
 	);
@@ -138,18 +115,6 @@ function js() {
 	return (
 		src(path.src.js)
 			.pipe(fileinclude())
-
-			// Сжатие JS:
-			// .pipe(dest(path.build.js))
-			// .pipe(
-			// 	uglify()
-			// 	)
-
-			.pipe(
-				rename({
-					extname: ".js",
-				})
-			)
 			.pipe(dest(path.build.js))
 			.pipe(browsersync.stream())
 	);
@@ -158,27 +123,6 @@ function js() {
 function images() {
 	return (
 		src(path.src.img)
-			// Преобразование картинок в webp
-			// .pipe (
-			// 	webp({
-			// 			quality: 70
-			// 		})
-			// 	)
-
-			.pipe(dest(path.build.img))
-			.pipe(src(path.src.img))
-
-			// Сжатие картинок
-			// .pipe(
-			// 	imagemin({
-			// 		interlaced: true,
-			// 		progressive: true,
-			// 		optimizationLevel: 5,
-			// 		svgoPlugins: [{ removeViewBox: true }]
-			// 	})
-			// )
-
-			.pipe(gulp.dest(path.build.img))
 			.pipe(dest(path.build.img))
 			.pipe(browsersync.stream())
 	);
@@ -188,7 +132,59 @@ function fonts() {
 	return src(path.src.fonts).pipe(dest(path.build.fonts));
 }
 
+
+function final() {
+	src(path.src.html)
+	.pipe(fileinclude())
+	.pipe(removeHtmlComments())
+	// .pipe(webphtml())
+	.pipe(dest(path.build.html));
+
+	src(path.src.css)
+	.pipe(
+		scss({
+			outputStyle: "expanded",
+		})
+	)
+	.pipe(group_media())
+	.pipe(
+		autoprefixer({
+			overrideBrowserslist: ["last 5 versions"],
+			cascade: true
+		})
+	)
+	.pipe(clean_css())
+	.pipe(dest(path.build.css));
+
+	src(path.src.js)
+	.pipe(fileinclude())
+	.pipe(
+		uglify()
+		)
+	.pipe(dest(path.build.js));
+
+	return src(path.src.img)
+	// Преобразование картинок в webp
+	// .pipe (
+	// 	webp({
+	// 			quality: 70
+	// 		})
+	// 	)
+	.pipe(
+		imagemin({
+			interlaced: true,
+			progressive: true,
+			optimizationLevel: 5,
+			svgoPlugins: [{ removeViewBox: true }]
+		})
+	)
+	.pipe(dest(path.build.img));
+}
+
+
+
 function wordpress() {
+	del(path.clean.wp);
 	src(path.wp.php)
 		// .pipe(removeHtmlComments())
 		.pipe(dest(wp_folder));
@@ -214,39 +210,20 @@ function wordpress() {
 	return src(path.wp.php);
 }
 
-let wordpressBuild = wordpress;
-
 function watchFiles(params) {
 	gulp.watch([path.watch.html], html);
 	gulp.watch([path.watch.css], css);
 	gulp.watch([path.watch.js], js);
 	gulp.watch([path.watch.img], images);
-	gulp.watch(
-		[
-			path.watch.wp_php,
-			path.watch.html,
-			path.watch.css,
-			path.watch.js,
-			path.watch.img,
-		],
-		{ delay: 2000 },
-		wordpressBuild
-	);
 }
 
 function clean(params) {
 	return del(path.clean.simple);
 }
 
-function cleanWp(params) {
-	return del(path.clean.wp);
-}
-
 let build = gulp.series(
 	clean,
-	cleanWp,
-	gulp.parallel(js, css, ico, html, images, fonts),
-	gulp.parallel(wordpressBuild)
+	gulp.parallel(js, css, ico, html, images, fonts)
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
@@ -256,7 +233,8 @@ exports.js = js;
 exports.css = css;
 exports.html = html;
 exports.build = build;
+exports.clean = clean;
 exports.wordpress = wordpress;
-exports.wordpressBuild = wordpressBuild;
+exports.final = final;
 exports.watch = watch;
 exports.default = watch;
